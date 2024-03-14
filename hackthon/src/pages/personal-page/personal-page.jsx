@@ -34,7 +34,7 @@ export const PersonalPage = () => {
         <p>Инстаграм: {userPage.socialNetwork.instagram}</p>
         <p>Линкедин: {userPage.socialNetwork.linkedIn}</p>
         <div className={style.progressBarWrapper}>
-          <h4>Прогресс</h4>
+          <h4>Прогресс</h4> 
           <ProgressBar progress={userPage.htmlProgress} color="blue" title="HTML" />
         </div>
       </div>

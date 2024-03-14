@@ -16,6 +16,7 @@ export const Header = () => {
             </li>
           ))}
         </ul>
+        <div>Избранное</div>
       </div>
     </>
   );

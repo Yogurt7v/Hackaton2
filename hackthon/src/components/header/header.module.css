@@ -3,3 +3,10 @@
     gap: 10px;
     list-style: none;
 }
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
