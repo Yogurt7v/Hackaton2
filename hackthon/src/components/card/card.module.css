@@ -6,6 +6,10 @@
   border-radius: 10px;
   transition: border 1s;
   position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
 }
 .border:hover{
     border: 1px solid white

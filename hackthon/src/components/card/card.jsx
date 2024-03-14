@@ -14,9 +14,6 @@ export const Card = ({ person }) => {
               className={style.border}
               style={{
                 backgroundImage: `url(${person.image})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
               }}
             >
               <h2 className={style.cardText}>{person.name || ""}</h2>
