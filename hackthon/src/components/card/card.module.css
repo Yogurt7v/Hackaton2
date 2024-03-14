@@ -1,0 +1,41 @@
+
+.border{
+  height: 369px;
+  width: 290px;
+  background: transparent;
+  border-radius: 10px;
+  transition: border 1s;
+  position: relative;
+}
+.border:hover{
+    border: 1px solid white
+}
+
+.cardText{
+  color: black;
+}
+
+.cardImage{
+    height: 600px;
+    width: 400px;
+}
+
+.card{
+  height: 379px;
+  width: 300px;
+  background: grey;
+  background-size: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: black;
+  box-shadow: 0 70px 63px -60px #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.card:hover{
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.1);
+}
