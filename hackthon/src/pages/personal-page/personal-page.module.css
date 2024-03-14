@@ -1,5 +1,13 @@
 .personalPageImage{
     width: 400px;
     height: 300px;
+}
 
+.personalSpecial{
+    display: flex;
+}
+
+.teamLead{
+    width: 20px;
+    height: 20px;
 }
