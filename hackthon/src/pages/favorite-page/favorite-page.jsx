@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import style from "./favorite-page.module.css";
-import { Button, Card } from "../../components";
+import { Button,} from "../../components";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { TEAM } from "../../constants";
@@ -16,10 +17,8 @@ export const FavoritePage = () => {
     localStorage.clear();
   };
     const removeFromFavorite = (id) => {
-      return () => {
         localStorage.removeItem(id);
         setFavorite(favorite.filter((item) => item.id !== id));
-      };
     };
 
   useEffect(() => {
