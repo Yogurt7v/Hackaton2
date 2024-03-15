@@ -1,18 +1,25 @@
-.personalPageImage{
-    width: 400px;
-    height: 300px;
+.personalPage {
+  background-color: #fff;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+}
+.personalPageImage {
+  width: 400px;
+  height: 300px;
 }
 
-.personalSpecial{
-    display: flex;
+.personalSpecial {
+  display: flex;
 }
 
-.teamLead{
-    width: 20px;
-    height: 20px;
+.teamLead {
+  width: 20px;
+  height: 20px;
 }
 
-.specialWrapper{
-    display: flex;
-    gap: 10px;
+.specialWrapper {
+  display: flex;
+  gap: 10px;
 }

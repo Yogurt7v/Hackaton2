@@ -4,13 +4,13 @@ import { useNavigate, useParams } from "react-router-dom";
 import { TEAM } from "../../constants";
 import { ProgressBar, Button, Bard, GitSwip } from "../../components";
 import { useEffect, useState } from "react";
+import { Breadcrumbs } from "../../components/breadcrumbs/breadcrumbs";
 
 export const PersonalPage = () => {
   const navigate = useNavigate();
   const params = useParams();
   const userPage = TEAM.find((item) => item.id === params.id);
   const [githubRepos, setGithubRepos] = useState([]);
-
 
   useEffect(() => {
     fetch(`https://api.github.com/users/${userPage.githubLogin}/repos`)
@@ -20,13 +20,13 @@ export const PersonalPage = () => {
       });
   }, []);
 
-
   const goBack = () => {
     navigate(-1);
   };
 
   return (
-    <div className={style.PersonalPage}>
+    <div className={style.personalPage}>
+      <Breadcrumbs />
       <h1>{userPage.name}</h1>
       <h1>{userPage.surname}</h1>
       <p>{userPage.description}</p>
@@ -58,10 +58,7 @@ export const PersonalPage = () => {
 
       <img src={userPage.image} className={style.personalPageImage} />
       <div className={style.swiperWrapper}>
-        {githubRepos.length>0 ? (
-          <GitSwip githubRepos={githubRepos} />
-        ): null}
-
+        {githubRepos.length > 0 ? <GitSwip githubRepos={githubRepos} /> : null}
       </div>
       <Button goBack={goBack} text="Назад" />
     </div>

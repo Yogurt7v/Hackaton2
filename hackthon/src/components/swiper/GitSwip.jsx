@@ -1,26 +1,23 @@
 /* eslint-disable react/prop-types */
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import { useRef } from 'react';
-import style from './GitSwip.module.css';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { useRef } from "react";
+import style from "./GitSwip.module.css";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
-export const GitSwip = ({githubRepos}) => {
+export const GitSwip = ({ githubRepos }) => {
+  const progressCircle = useRef(null);
+  const progressContent = useRef(null);
+  const onAutoplayTimeLeft = (s, time, progress) => {
+    progressCircle.current.style.setProperty("--progress", 1 - progress);
+    progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+  };
 
-    const progressCircle = useRef(null);
-    const progressContent = useRef(null);
-    const onAutoplayTimeLeft = (s, time, progress) => {
-        progressCircle.current.style.setProperty('--progress', 1 - progress);
-        progressContent.current.textContent = `${Math.ceil(time / 1000)}s`
-    };
-
-    console.log(githubRepos);
-
-    return (
-        <>
-        <Swiper
+  return (
+    <>
+      <Swiper
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
@@ -45,6 +42,6 @@ export const GitSwip = ({githubRepos}) => {
           <span ref={progressContent}></span>
         </div>
       </Swiper>
-        </>
-    )
-}
+    </>
+  );
+};
