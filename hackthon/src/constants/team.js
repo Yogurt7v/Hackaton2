@@ -3,6 +3,7 @@
             "id": "1",
             "name": "Name",
             "surname": "Surname",
+            "githubLogin": "Yogurt7v",
             "description": "Team 1 description",
             "htmlProgress": 90,
             "socialNetwork":{

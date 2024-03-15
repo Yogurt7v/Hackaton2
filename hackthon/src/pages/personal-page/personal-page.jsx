@@ -1,12 +1,25 @@
+/* eslint-disable react/no-unknown-property */
 import style from "./personal-page.module.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { TEAM } from "../../constants";
-import { ProgressBar, Button, Bard } from "../../components";
+import { ProgressBar, Button, Bard, GitSwip } from "../../components";
+import { useEffect, useState } from "react";
 
 export const PersonalPage = () => {
   const navigate = useNavigate();
   const params = useParams();
   const userPage = TEAM.find((item) => item.id === params.id);
+  const [githubRepos, setGithubRepos] = useState([]);
+
+
+  useEffect(() => {
+    fetch(`https://api.github.com/users/${userPage.githubLogin}/repos`)
+      .then((response) => response.json())
+      .then((data) => {
+        setGithubRepos(data.map((item) => item.name));
+      });
+  }, []);
+
 
   const goBack = () => {
     navigate(-1);
@@ -44,7 +57,12 @@ export const PersonalPage = () => {
       </div>
 
       <img src={userPage.image} className={style.personalPageImage} />
-      <div>Здесь будет слайдер</div>
+      <div className={style.swiperWrapper}>
+        {githubRepos.length>0 ? (
+          <GitSwip githubRepos={githubRepos} />
+        ): null}
+
+      </div>
       <Button goBack={goBack} text="Назад" />
     </div>
   );
