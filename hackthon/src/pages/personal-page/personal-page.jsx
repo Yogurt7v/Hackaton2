@@ -1,10 +1,14 @@
 /* eslint-disable react/no-unknown-property */
 import style from "./personal-page.module.css";
+import vk from "../../assets/icons/vk.svg";
+import facebook from "../../assets/icons/facebook.svg";
+import instagram from "../../assets/icons/instagram.svg";
+import linkedIn from "../../assets/icons/linkedin.svg";
+import github from "../../assets/icons/github.svg";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { TEAM } from "../../constants";
-import { ProgressBar, Button, Bard, GitSwip } from "../../components";
-import { useEffect, useState } from "react";
-import { Breadcrumbs } from "../../components/breadcrumbs/breadcrumbs";
+import { ProgressBar, Button, Bard, GitSwip, Logo } from "../../components";
 
 export const PersonalPage = () => {
   const navigate = useNavigate();
@@ -24,9 +28,18 @@ export const PersonalPage = () => {
     navigate(-1);
   };
 
+  const addToFavorite = () => {
+    localStorage.setItem(userPage.id, JSON.stringify(userPage.id));
+  };
+
   return (
-    <div className={style.personalPage}>
+    <div className={style.PersonalPage}>
       <Breadcrumbs />
+      <Button
+        text={"Добавить в избранное"}
+        borderRadius={"10px"}
+        func={addToFavorite}
+      />
       <h1>{userPage.name}</h1>
       <h1>{userPage.surname}</h1>
       <p>{userPage.description}</p>
@@ -41,11 +54,27 @@ export const PersonalPage = () => {
 
       <div>
         <h2>Социальные сети</h2>
-        <p>Вконтакте: {userPage.socialNetwork.vk}</p>
-        <p>Фейсбук: {userPage.socialNetwork.facebook}</p>
-        <p>Инстаграм: {userPage.socialNetwork.instagram}</p>
-        <p>Линкедин: {userPage.socialNetwork.linkedIn}</p>
-        <p>Гит: {userPage.socialNetwork.github}</p>
+        <Logo alt={"vkontakte"} text={userPage.socialNetwork.vk} logo={vk} />
+        <Logo
+          alt={"facebook"}
+          text={userPage.socialNetwork.facebook}
+          logo={facebook}
+        />
+        <Logo
+          alt={"instagram"}
+          text={userPage.socialNetwork.instagram}
+          logo={instagram}
+        />
+        <Logo
+          alt={"linkedin"}
+          text={userPage.socialNetwork.linkedIn}
+          logo={linkedIn}
+        />
+        <Logo
+          alt={"github"}
+          text={userPage.socialNetwork.github}
+          logo={github}
+        />
         <div className={style.progressBarWrapper}>
           <h4>Прогресс</h4>
           <ProgressBar
@@ -60,7 +89,7 @@ export const PersonalPage = () => {
       <div className={style.swiperWrapper}>
         {githubRepos.length > 0 ? <GitSwip githubRepos={githubRepos} /> : null}
       </div>
-      <Button goBack={goBack} text="Назад" />
+      <Button func={() => goBack()} text="Назад" />
     </div>
   );
 };

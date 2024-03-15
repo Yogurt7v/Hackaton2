@@ -5,4 +5,5 @@ export * from "./button/button.jsx";
 export * from "./bard/bard.jsx";
 export * from "./progress-bar/progress-bar.jsx";
 export * from "./swiper/GitSwip.jsx";
+export * from "./logo/logo.jsx";
 // export * from "./breadcrumbs/breadcrumbs.jsx";
