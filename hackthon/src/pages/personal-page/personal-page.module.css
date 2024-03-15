@@ -11,3 +11,8 @@
     width: 20px;
     height: 20px;
 }
+
+.specialWrapper{
+    display: flex;
+    gap: 10px;
+}
