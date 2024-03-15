@@ -1,5 +1,5 @@
 import { useMatches } from "react-router-dom";
-import styles from "./breadcrumbs.module.css";
+import style from "./breadcrumbs.module.css";
 import { useEffect } from "react";
 
 export const Breadcrumbs = () => {
@@ -14,9 +14,9 @@ export const Breadcrumbs = () => {
   }, []);
 
   return (
-    <ol className={styles.breadcrumbs}>
+    <ol className={style.breadcrumbs}>
       {crumbs.map((crumb, index) => (
-        <li className={styles.breadcrumbs_item} key={index}>
+        <li className={style.breadcrumbs_item} key={index}>
           {crumb}
         </li>
       ))}

@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unknown-property */
 import style from "./personal-page.module.css";
+import { useDispatch, useSelector } from "react-redux";
 import vk from "../../assets/icons/vk.svg";
 import facebook from "../../assets/icons/facebook.svg";
 import instagram from "../../assets/icons/instagram.svg";
@@ -8,13 +9,27 @@ import github from "../../assets/icons/github.svg";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { TEAM } from "../../constants";
-import { ProgressBar, Button, Bard, GitSwip, Logo } from "../../components";
+import {
+  ProgressBar,
+  Button,
+  Bard,
+  // GitSwip,
+  Logo,
+  Breadcrumbs,
+} from "../../components";
+
+import {
+  setIsOpenModal,
+  setTextForModal,
+  setUserPage,
+} from "../../redux/actions";
+import { userPageSelector } from "../../redux/selectors";
 
 export const PersonalPage = () => {
   const navigate = useNavigate();
   const params = useParams();
-  const userPage = TEAM.find((item) => item.id === params.id);
-  const [githubRepos, setGithubRepos] = useState([]);
+  const dispatch = useDispatch();
+  const [setGithubRepos] = useState([]);
 
   useEffect(() => {
     fetch(`https://api.github.com/users/${userPage.githubLogin}/repos`)
@@ -22,18 +37,21 @@ export const PersonalPage = () => {
       .then((data) => {
         setGithubRepos(data.map((item) => item.name));
       });
+    console.log(TEAM.find((item) => item.id === params.id));
+    dispatch(setUserPage(TEAM.find((item) => item.id === params.id)));
   }, []);
 
   const goBack = () => {
     navigate(-1);
   };
-
+  const userPage = useSelector(userPageSelector);
   const addToFavorite = () => {
-    localStorage.setItem(userPage.id, JSON.stringify(userPage.id));
+    dispatch(setIsOpenModal(true));
+    dispatch(setTextForModal("Уверены, что хотите добавить в избранное?"));
   };
 
   return (
-    <div className={style.PersonalPage}>
+    <div className={style.personalPage}>
       <Breadcrumbs />
       <Button
         text={"Добавить в избранное"}
@@ -44,7 +62,7 @@ export const PersonalPage = () => {
       <h1>{userPage.surname}</h1>
       <p>{userPage.description}</p>
 
-      {userPage.special.length > 0 ? (
+      {userPage.special?.length > 0 ? (
         <div className={style.specialWrapper}>
           {userPage.special.map((item) => (
             <Bard color={"green"} text={item} key={item} />
@@ -54,25 +72,25 @@ export const PersonalPage = () => {
 
       <div>
         <h2>Социальные сети</h2>
-        <Logo alt={"vkontakte"} text={userPage.socialNetwork.vk} logo={vk} />
+        <Logo alt={"vkontakte"} text={userPage.socialNetwork?.vk} logo={vk} />
         <Logo
           alt={"facebook"}
-          text={userPage.socialNetwork.facebook}
+          text={userPage.socialNetwork?.facebook}
           logo={facebook}
         />
         <Logo
           alt={"instagram"}
-          text={userPage.socialNetwork.instagram}
+          text={userPage.socialNetwork?.instagram}
           logo={instagram}
         />
         <Logo
           alt={"linkedin"}
-          text={userPage.socialNetwork.linkedIn}
+          text={userPage.socialNetwork?.linkedIn}
           logo={linkedIn}
         />
         <Logo
           alt={"github"}
-          text={userPage.socialNetwork.github}
+          text={userPage.socialNetwork?.github}
           logo={github}
         />
         <div className={style.progressBarWrapper}>
@@ -87,7 +105,7 @@ export const PersonalPage = () => {
 
       <img src={userPage.image} className={style.personalPageImage} />
       <div className={style.swiperWrapper}>
-        {githubRepos.length > 0 ? <GitSwip githubRepos={githubRepos} /> : null}
+        {/* {githubRepos.length > 0 ? <GitSwip githubRepos={githubRepos} /> : null} */}
       </div>
       <Button func={() => goBack()} text="Назад" />
     </div>

@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import style from "./favorite-page.module.css";
-import { Button, Card,} from "../../components";
+import { Breadcrumbs, Button, Card } from "../../components";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { TEAM } from "../../constants";
@@ -14,7 +14,9 @@ export const FavoritePage = () => {
   };
 
   const removeFromFavorite = (id) => {
-    const removedFavorites = favorite.filter((favoriteItem) => favoriteItem.id !== id);
+    const removedFavorites = favorite.filter(
+      (favoriteItem) => favoriteItem.id !== id
+    );
     localStorage.removeItem(id);
     setFavorite(removedFavorites);
   };
@@ -26,7 +28,9 @@ export const FavoritePage = () => {
 
   useEffect(() => {
     const getFavorites = () => {
-      const favoriteItems = TEAM.filter((teamMember) => localStorage.getItem(teamMember.id));
+      const favoriteItems = TEAM.filter((teamMember) =>
+        localStorage.getItem(teamMember.id)
+      );
       setFavorite(favoriteItems);
     };
 
@@ -35,15 +39,20 @@ export const FavoritePage = () => {
 
   return (
     <div className={style.favoritePage}>
+      <Breadcrumbs />
       <h1>Избранное</h1>
       <div className={style.favoriteWrapper}>
         {favorite.length > 0 ? (
           favorite.map((favoriteItem) => (
             <>
-            <div className={style.favoriteCardWrapper}>
-              <div>{favoriteItem.name}</div>
-              <Card person={favoriteItem}/>
-              <Button text={"Удалить"} borderRadius={"10px"} func={() =>removeFromFavorite(favoriteItem.id)}/>
+              <div className={style.favoriteCardWrapper}>
+                <div>{favoriteItem.name}</div>
+                <Card person={favoriteItem} />
+                <Button
+                  text={"Удалить"}
+                  borderRadius={"10px"}
+                  func={() => removeFromFavorite(favoriteItem.id)}
+                />
               </div>
             </>
           ))
@@ -68,4 +77,3 @@ export const FavoritePage = () => {
     </div>
   );
 };
-

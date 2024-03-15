@@ -1,5 +1,5 @@
 import style from "./main-page.module.css";
-import { Header, Card, TeamInfo } from "../../components";
+import { Header, Card, TeamInfo, Modal } from "../../components";
 import { TEAM } from "../../constants/team";
 import { Outlet } from "react-router-dom";
 
@@ -14,6 +14,7 @@ export const MainPage = () => {
         ))}{" "}
       </div>
       <Outlet />
+      <Modal />
     </>
   );
 };
