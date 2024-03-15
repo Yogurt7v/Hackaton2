@@ -34,8 +34,8 @@
         },
         {
             "id": "3",
-            "name": "Ibragimova",
-            "surname": "Natalia",
+            "name": "Natalia",
+            "surname": "Ibragimova",
             "description": "Team 2 hackathon 2",
             "htmlProgress": 90,
             "socialNetwork":{
