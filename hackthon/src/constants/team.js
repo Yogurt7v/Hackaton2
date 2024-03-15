@@ -34,34 +34,34 @@
         },
         {
             "id": "3",
-            "name": "Name",
-            "surname": "Surname",
-            "description": "Team 1 description",
+            "name": "Ibragimova",
+            "surname": "Natalia",
+            "description": "Team 2 hackathon 2",
             "htmlProgress": 90,
             "socialNetwork":{
                 "vk": "",
                 "facebook":"",
                 "instagram": "",
                 "linkedIn": "",
-                "github": ""
+                "github": "https://github.com/IbragimovaN"
             },
-            "special": [],
+            "special": ["frontend"],
             "image": ""
         },
         {
             "id": "4",
-            "name": "Name",
-            "surname": "Surname",
-            "description": "Team 1 description",
+            "name": "Roman",
+            "surname": "Troshin",
+            "description": "Team 2 hackathon 2",
             "htmlProgress": 90,
             "socialNetwork":{
                 "vk": "",
                 "facebook":"",
                 "instagram": "",
                 "linkedIn": "",
-                "github": ""
+                "github": "https://github.com/Roman-Troshin"
             },
-            "special": [],
+            "special": ["frontend"],
             "image": ""
         }
     ]

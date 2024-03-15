@@ -1,4 +1,4 @@
-import style from "./GitSwip.module.css";
+import style from "./git-swip.module.css";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
