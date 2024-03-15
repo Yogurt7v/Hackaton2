@@ -72,7 +72,7 @@ export const PersonalPage = () => {
       <div className={style.swiperWrapper}>
         {githubRepos.length > 0 ? <GitSwip githubRepos={githubRepos} /> : null}
       </div>
-      <Button func={goBack} text="Назад" />
+      <Button func={() => goBack()} text="Назад" />
     </div>
   );
 };

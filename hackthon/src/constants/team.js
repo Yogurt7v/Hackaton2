@@ -7,10 +7,10 @@
             "description": "Team 2 hackathon 2",
             "htmlProgress": 90,
             "socialNetwork":{
-                "vk": "none",
-                "facebook":"none",
-                "instagram": "none",
-                "linkedIn": "none",
+                "vk": "недоступен",
+                "facebook":"недоступен",
+                "instagram": "недоступен",
+                "linkedIn": "недоступен",
                 "github": "https://github.com/Yogurt7v"
             },
             "special": ["teamLead", "frontend"],
@@ -34,15 +34,15 @@
         },
         {
             "id": "3",
-            "name": "Natalia",
-            "surname": "Ibragimova",
+            "name": "Анастасия",
+            "surname": "Ибрагимова",
             "description": "Team 2 hackathon 2",
             "htmlProgress": 90,
             "socialNetwork":{
-                "vk": "",
-                "facebook":"",
-                "instagram": "",
-                "linkedIn": "",
+                "vk": "ibragimova1",
+                "facebook":"недоступен",
+                "instagram": "ibragimova.anastasiya",
+                "linkedIn": "недоступен",
                 "github": "https://github.com/IbragimovaN"
             },
             "special": ["frontend"],
