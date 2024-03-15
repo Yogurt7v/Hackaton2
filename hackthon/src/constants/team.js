@@ -20,6 +20,7 @@
             "id": "2",
             "name": "Александр",
             "surname": "Шульгин",
+            "githubLogin": "",
             "description": "Team 2 ackathon 2. Веду активный образ жизни,  решил сменить рабочую профессию и обучаюсь в Result School на Front-end-React разработчика. Люблю путешествовать, узнавать новое, создавать и делать полезные вещи и дела 🙂",
             "htmlProgress": 91,
             "socialNetwork":{
@@ -36,6 +37,7 @@
             "id": "3",
             "name": "Анастасия",
             "surname": "Ибрагимова",
+            "githubLogin": "IbragimovaN",
             "description": "Team 2 hackathon 2",
             "htmlProgress": 90,
             "socialNetwork":{
@@ -46,12 +48,13 @@
                 "github": "https://github.com/IbragimovaN"
             },
             "special": ["frontend"],
-            "image": ""
+            "image": "https://static.tildacdn.com/tild3538-3637-4166-b865-346166353965/16768_original.jpg"
         },
         {
             "id": "4",
             "name": "Roman",
             "surname": "Troshin",
+            "githubLogin": "Roman-Troshin",
             "description": "Team 2 hackathon 2",
             "htmlProgress": 90,
             "socialNetwork":{
@@ -62,6 +65,6 @@
                 "github": "https://github.com/Roman-Troshin"
             },
             "special": ["frontend"],
-            "image": ""
+            "image": "https://telegra.ph/file/04b3da91a884f3a33baec.jpg"
         }
     ]

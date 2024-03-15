@@ -27,7 +27,6 @@
 .card{
   height: 379px;
   width: 300px;
-  background: grey;
   background-size: 300px;
   border-radius: 10px;
   overflow: hidden;

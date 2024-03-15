@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import style from "./favorite-page.module.css";
-import { Button,} from "../../components";
+import { Button, Card,} from "../../components";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { TEAM } from "../../constants";
@@ -15,10 +15,12 @@ export const FavoritePage = () => {
 
   const removeFromFavorite = (id) => {
     const removedFavorites = favorite.filter((favoriteItem) => favoriteItem.id !== id);
+    localStorage.removeItem(id);
     setFavorite(removedFavorites);
   };
 
   const clearLocalStorage = () => {
+    localStorage.clear();
     setFavorite([]);
   };
 
@@ -38,10 +40,11 @@ export const FavoritePage = () => {
         {favorite.length > 0 ? (
           favorite.map((favoriteItem) => (
             <>
-              <div className={style.favoriteCardWrapper} key={favoriteItem.id}>
-                <div>{favoriteItem.name}</div>
+            <div className={style.favoriteCardWrapper}>
+              <div>{favoriteItem.name}</div>
+              <Card person={favoriteItem}/>
+              <Button text={"Удалить"} borderRadius={"10px"} func={() =>removeFromFavorite(favoriteItem.id)}/>
               </div>
-              <Button text={"Удалить"} borderRadius={"10px"} func={() => removeFromFavorite(favoriteItem.id)}/>
             </>
           ))
         ) : (
