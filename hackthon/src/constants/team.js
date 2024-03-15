@@ -14,7 +14,7 @@
                 "github": "https://github.com/Yogurt7v"
             },
             "special": ["teamLead", "frontend"],
-            "image": "https://1.downloader.disk.yandex.ru/preview/09911ee2a64ba554d0b64995361a93600aa49a7cfc3d4a08e403c19c011a2953/inf/ZA5nVuIWol8rtRW1_HfPdplJHvOOZkt4rrVQabdAqPyfw7wGY0hT3Lg4WiZZyiAUgF8WC9HH5lMhtDw3lNqqBA%3D%3D?uid=87392891&filename=Image1.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=87392891&tknv=v2&size=3200x1752"
+            "image": "https://wdfiles.ru/plugins/imageviewer/site/thumb.php?s=28v89&/Image1.jpg"
         },
         {
             "id": "2",

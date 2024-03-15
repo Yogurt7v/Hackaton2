@@ -1,6 +1,7 @@
 import style from "./logo.module.css";
 import notAvilable from "../../assets/icons/unavailable.svg";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Logo = ({ alt, text, logo }) => {
 
@@ -19,7 +20,8 @@ export const Logo = ({ alt, text, logo }) => {
       {option ? (
         <img src={notAvilable} alt={alt} className={style.logo} />
       ) : (
-        <p>{text}</p>
+
+        <Link to={text} className={style.text}>link</Link>
       )}
     </div>
   );

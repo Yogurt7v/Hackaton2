@@ -1,7 +1,7 @@
 import style from "./progress-bar.module.css";
 
 // eslint-disable-next-line react/prop-types
-export const ProgressBar = ({ progress, color, title  }) => {
+export const ProgressBar = ({ progress, color, title }) => {
   return (
     <>
       <h2>{title}</h2>
