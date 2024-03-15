@@ -25,8 +25,13 @@ export const PersonalPage = () => {
     navigate(-1);
   };
 
+  const addToFavorite = () => {
+    localStorage.setItem(userPage.id, JSON.stringify(userPage.id));
+  };
+
   return (
     <div className={style.PersonalPage}>
+      <Button  text={"Добавить в избранное"} borderRadius={"10px"} func={addToFavorite} />
       <h1>{userPage.name}</h1>
       <h1>{userPage.surname}</h1>
       <p>{userPage.description}</p>
@@ -63,7 +68,7 @@ export const PersonalPage = () => {
         ): null}
 
       </div>
-      <Button goBack={goBack} text="Назад" />
+      <Button func={goBack} text="Назад" />
     </div>
   );
 };

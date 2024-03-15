@@ -8,7 +8,6 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 export const GitSwip  =({githubRepos}) => {
 
-  console.log(githubRepos);
   return (
     <>
       <Swiper

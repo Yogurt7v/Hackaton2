@@ -1,10 +1,8 @@
 import slyle from "./header.module.css";
 import { TEAM } from "../../constants/team";
-
+import { Link } from "react-router-dom";
 
 export const Header = () => {
-
-
   return (
     <>
       <div className={slyle.header}>
@@ -16,7 +14,9 @@ export const Header = () => {
             </li>
           ))}
         </ul>
-        <div>Избранное</div>
+        <Link to="/favorite">
+          <div>Избранное</div>
+        </Link>
       </div>
     </>
   );
