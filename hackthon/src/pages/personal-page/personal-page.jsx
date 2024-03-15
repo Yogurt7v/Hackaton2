@@ -1,6 +1,5 @@
 import style from "./personal-page.module.css";
 import { useNavigate, useParams } from "react-router-dom";
-import  teamLead from "../../../public/icons/teamLead.svg";
 import { TEAM } from "../../constants";
 import { ProgressBar } from "../../components/progress-bar/progress-bar";
 import { Button } from "../../components";
@@ -9,7 +8,7 @@ export const PersonalPage = () => {
   const navigate = useNavigate();
   const params = useParams();
   const userPage = TEAM.find((item) => item.id === params.id);
-  const userSpecial = userPage.special;
+
 
   const goBack = () => {
     console.log("goBack");
@@ -21,11 +20,6 @@ export const PersonalPage = () => {
       <h1>{userPage.name}</h1>
       <h1>{userPage.surname}</h1>
       <p>{userPage.description}</p>
-      {userSpecial.map((item) => { 
-        if(item === "teamLead"){
-          return <img src={teamLead} className={style.teamLead} alt="teamLead" key={item} />
-        }
-      })}
 
       <div>
         <h2>Социальные сети</h2>
