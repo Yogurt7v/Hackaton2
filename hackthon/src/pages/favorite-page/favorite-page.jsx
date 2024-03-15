@@ -32,7 +32,7 @@ export const FavoritePage = () => {
   }, []);
 
   return (
-    <div className={style.FavoritePage}>
+    <div className={style.favoritePage}>
       <h1>Избранное</h1>
       <div className={style.favoriteWrapper}>
         {favorite.length > 0 ? (

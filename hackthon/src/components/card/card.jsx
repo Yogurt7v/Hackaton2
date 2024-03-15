@@ -6,7 +6,6 @@ export const Card = ({ person }) => {
   return (
     <>
     <Link to={`/team/${person.id}`}>
-      <div className={style.CardWrapper}>
         <div className={style.card}>
           {person.image && (
             <div
@@ -20,7 +19,6 @@ export const Card = ({ person }) => {
             </div>
           )}
         </div>
-      </div>
       </Link>
     </>
   );

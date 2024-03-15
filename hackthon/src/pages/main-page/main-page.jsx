@@ -7,7 +7,7 @@ export const MainPage = () => {
     <>
       <Header />
       <TeamInfo />
-      <div className={style.CardWrapper}>
+      <div className={style.cardWrapper}>
         {TEAM.map((item) => (
           <Card person={item} key={item.id} />
         ))}{" "}
