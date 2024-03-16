@@ -28,13 +28,14 @@ export const Footer = () => {
     <div className={style.footerWrapper}>
       <div className={style.footerLeft}>
         <div className={style.footerText}>
-          Студенты ResultSchool
+        BrainStorm
+          
         </div>
         <div className={style.footerLogo}>© 2024 </div>
       </div>
 
       <div className={style.footerCenter}>
-        <div className={style.footerTimer}>{time}</div>
+        <div className={style.footerTimer}>Студенты ResultSchool уже: {time}</div>
       </div>
 
       <div className={style.footerRight}>
