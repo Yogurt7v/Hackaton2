@@ -7,7 +7,7 @@ import facebook from "../../assets/icons/facebook.svg";
 import instagram from "../../assets/icons/instagram.svg";
 import linkedIn from "../../assets/icons/linkedin.svg";
 import github from "../../assets/icons/github.svg";
-// import favLogo from "../../assets/icons/star.svg";
+import favLogo from "../../assets/icons/star.svg";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { TEAM } from "../../constants";
@@ -27,6 +27,7 @@ export const PersonalPage = () => {
   const [githubRepos, setGithubRepos] = useState([]);
   const userPage = TEAM.find((item) => item.id === params.id);
   const [isOpenModalWindows, setIsOpenModalWindows] = useState(false);
+  const [star, setStar] = useState(false);
 
   useEffect(() => {
     fetch(`https://api.github.com/users/${userPage.githubLogin}/repos`)
@@ -52,11 +53,11 @@ export const PersonalPage = () => {
             borderRadius={"10px"}
             func={addToFavorite}
           />
-          {/* {star ? (
+          {star ? (
             <div>
               <img src={favLogo} alt="Favorite" className={style.starLogo} />
             </div>
-          ) : null} */}
+          ) : null}
           <h1>{userPage.name}</h1>
           <h1>{userPage.surname}</h1>
           <p>{userPage.description}</p>
@@ -119,7 +120,8 @@ export const PersonalPage = () => {
         <Modal
           setIsOpenModalWindows={setIsOpenModalWindows}
           userPage={userPage}
-        />
+          setStar={setStar}
+        />  
       )}
     </>
   );

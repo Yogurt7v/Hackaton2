@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import style from "./favorite-page.module.css";
-import { Button, Card, Footer, Header, Layout } from "../../components";
+import { Button, Card,  Header, Layout } from "../../components";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { TEAM } from "../../constants";
@@ -80,8 +80,6 @@ export const FavoritePage = () => {
           />
         ) : null}
       </div>
-      <Footer />
-
       </Layout>
     </>
   );
