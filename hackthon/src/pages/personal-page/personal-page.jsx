@@ -26,8 +26,8 @@ export const PersonalPage = () => {
   const userPage = TEAM.find((item) => item.id === params.id);
   const [isOpenModalWindows, setIsOpenModalWindows] = useState(false);
   const [isFav, setIsFav] = useState(false);
+  const [progressBarType, setProgressBarType] = useState("circle");
 
-  const progressBarType = "circle";
   const progressBarStyle = `${progressBarType}ProgressBarWrapper`;
 
   useEffect(() => {
@@ -111,6 +111,10 @@ export const PersonalPage = () => {
 
             <div className={style[progressBarStyle]}>
               <h4>Прогресс</h4>
+              <select className={style.select} onChange={(e) => setProgressBarType(e.target.value)}>
+                <option value="circle">Круг</option>
+                <option value="line">Линия</option>
+              </select>
 
               {Object.entries(userPage.skills).map((skillInfo, index) => (
                 <ProgressBar
