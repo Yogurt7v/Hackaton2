@@ -21,7 +21,7 @@ export const Logo = ({ alt, text, logo }) => {
         <img src={notAvilable} alt={alt} className={style.logo} />
       ) : (
 
-        <Link to={text} className={style.text}>link</Link>
+        <Link to={text} className={style.text}>{alt}</Link>
       )}
     </div>
   );

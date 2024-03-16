@@ -1,11 +1,12 @@
 /* eslint-disable react/prop-types */
 import style from "./card.module.css";
+// import starIcon from "../../assets/icons/star.svg";
 import { Link } from "react-router-dom";
 
 export const Card = ({ person }) => {
   return (
     <>
-    <Link to={`/team/${person.id}`}>
+      <Link to={`/team/${person.id}`}>
         <div className={style.card}>
           {person.image && (
             <div
@@ -16,6 +17,11 @@ export const Card = ({ person }) => {
             >
               <h2 className={style.cardText}>{person.name}</h2>
               <h2 className={style.cardText}>{person.surname}</h2>
+              {/* {star ? (
+                <div>
+                  <img src={starIcon} alt="star" className={style.star} />
+                </div>
+              ) : null} */}
             </div>
           )}
         </div>

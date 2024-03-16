@@ -1,5 +1,4 @@
-
-.border{
+.border {
   height: 369px;
   width: 290px;
   background: transparent;
@@ -9,22 +8,21 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
 }
-.border:hover{
-    border: 1px solid white
+.border:hover {
+  border: 1px solid white;
 }
 
-.cardText{
+.cardText {
   color: black;
 }
 
-.cardImage{
-    height: 600px;
-    width: 400px;
+.cardImage {
+  height: 600px;
+  width: 400px;
 }
 
-.card{
+.card {
   height: 379px;
   width: 300px;
   background-size: 300px;
@@ -38,7 +36,12 @@
   position: relative;
 }
 
-.card:hover{
-    transition: all 0.2s ease-in-out;
-    transform: scale(1.1);
+.card:hover {
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.1);
+}
+
+.star {
+  width: 30px;
+  height: 30px;
 }
