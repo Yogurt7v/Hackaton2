@@ -1,8 +1,14 @@
 /* eslint-disable react/prop-types */
 import style from "./card.module.css";
+import star from "../../assets/icons/star.svg"
 import { Link } from "react-router-dom";
 
-export const Card = ({ person }) => {
+export const Card = ({ person, favStar }) => {
+
+  if(localStorage.getItem(person.id)){
+    favStar = true
+  }
+
   return (
     <>
     <Link to={`/team/${person.id}`}>
@@ -16,6 +22,7 @@ export const Card = ({ person }) => {
             >
               <h2 className={style.cardText}>{person.name}</h2>
               <h2 className={style.cardText}>{person.surname}</h2>
+              {favStar ? (<div ><img src={star} alt="star" className={style.star}/></div>) : (null)}
             </div>
           )}
         </div>

@@ -40,7 +40,7 @@ export const FavoritePage = () => {
         {favorite.length > 0 ? (
           favorite.map((favoriteItem) => (
             <>
-            <div className={style.favoriteCardWrapper}>
+            <div className={style.favoriteCardWrapper} key={favoriteItem.id}>
               <div>{favoriteItem.name}</div>
               <Card person={favoriteItem}/>
               <Button text={"Удалить"} borderRadius={"10px"} func={() =>removeFromFavorite(favoriteItem.id)}/>

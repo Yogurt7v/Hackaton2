@@ -9,12 +9,14 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { TEAM } from "../../constants";
 import { ProgressBar, Button, Bard, GitSwip, Logo } from "../../components";
+import  favLogo from "../../assets/icons/star.svg";
 
 export const PersonalPage = () => {
   const navigate = useNavigate();
   const params = useParams();
   const userPage = TEAM.find((item) => item.id === params.id);
   const [githubRepos, setGithubRepos] = useState([]);
+  const [star, setStar] = useState(false);
 
   useEffect(() => {
     fetch(`https://api.github.com/users/${userPage.githubLogin}/repos`)
@@ -24,12 +26,22 @@ export const PersonalPage = () => {
       });
   }, []);
 
+
+  useEffect(() => {
+
+    let personIsFavorite = localStorage.getItem(userPage.id);
+    if(personIsFavorite){
+      setStar(true)
+    }
+  }, []);
+
   const goBack = () => {
     navigate(-1);
   };
 
   const addToFavorite = () => {
     localStorage.setItem(userPage.id, JSON.stringify(userPage.id));
+    setStar(true);
   };
 
   return (
@@ -39,6 +51,7 @@ export const PersonalPage = () => {
         borderRadius={"10px"}
         func={addToFavorite}
       />
+      {star? (<div><img src={favLogo} alt="Favorite" className={style.starLogo}/></div>):(null)}
       <h1>{userPage.name}</h1>
       <h1>{userPage.surname}</h1>
       <p>{userPage.description}</p>
