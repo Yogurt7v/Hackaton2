@@ -1,20 +1,19 @@
-.favoritePage{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+.favoritePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.favoriteWrapper{
-    display: flex;
-    gap: 20px;
+.favoriteWrapper {
+  display: flex;
+  gap: 20px;
 }
 
-.favoriteCardWrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap:20px;
+.favoriteCardWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
