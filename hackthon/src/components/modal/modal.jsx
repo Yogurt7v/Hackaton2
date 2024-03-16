@@ -2,14 +2,14 @@
 import style from "./modal.module.css";
 import { Button } from "../button/button";
 
-export const Modal = ({ setIsOpenModalWindows, userPage, setStar }) => {
+export const Modal = ({ setIsOpenModalWindows, userPage, setIsFav }) => {
   const onCkickYes = () => {
     localStorage.setItem(userPage.id, JSON.stringify(userPage.id));
-    setStar(true);
+    setIsFav(true);
     setIsOpenModalWindows(false);
   };
   const onCkickCancel = () => {
-    setStar(false);
+    setIsFav(false);
     setIsOpenModalWindows(false);
   };
 

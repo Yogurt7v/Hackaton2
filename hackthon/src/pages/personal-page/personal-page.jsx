@@ -27,7 +27,7 @@ export const PersonalPage = () => {
   const [githubRepos, setGithubRepos] = useState([]);
   const userPage = TEAM.find((item) => item.id === params.id);
   const [isOpenModalWindows, setIsOpenModalWindows] = useState(false);
-  const [star, setStar] = useState(false);
+  const [isFav, setIsFav] = useState(false);
 
   useEffect(() => {
     fetch(`https://api.github.com/users/${userPage.githubLogin}/repos`)
@@ -35,6 +35,7 @@ export const PersonalPage = () => {
       .then((data) => {
         setGithubRepos(data.map((item) => item.name));
       });
+    localStorage.getItem(userPage.id) ? setIsFav(true) : setIsFav(false);
   }, []);
 
   const goBack = () => {
@@ -48,19 +49,27 @@ export const PersonalPage = () => {
     <>
       <Layout>
         <div className={style.personalPage}>
-          <Button
-            text={"Добавить в избранное"}
-            borderRadius={"10px"}
-            func={addToFavorite}
-          />
-          {star ? (
+          {isFav ? (
             <div>
               <img src={favLogo} alt="Favorite" className={style.starLogo} />
+              <span>В избранном</span>
             </div>
-          ) : null}
+          ) : (
+            <Button
+              text={"Добавить в избранное"}
+              borderRadius={"10px"}
+              className={style.buttonFavorite}
+              func={addToFavorite}
+            />
+          )}
+
           <h1>{userPage.name}</h1>
           <h1>{userPage.surname}</h1>
+          <p>{userPage.age}</p>
           <p>{userPage.description}</p>
+          {userPage.done.map((item) => (
+            <span key={item}>{item}</span>
+          ))}
 
           {userPage.special?.length > 0 ? (
             <div className={style.specialWrapper}>
@@ -120,8 +129,8 @@ export const PersonalPage = () => {
         <Modal
           setIsOpenModalWindows={setIsOpenModalWindows}
           userPage={userPage}
-          setStar={setStar}
-        />  
+          setIsFav={setIsFav}
+        />
       )}
     </>
   );
