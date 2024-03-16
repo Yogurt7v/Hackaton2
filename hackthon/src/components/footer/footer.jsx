@@ -1,6 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect, useState } from "react";
 import style from "./footer.module.css";
+import resultLogo from "../../assets/images/resultLogo.svg"
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 export const Footer = () => {
   const [time, setTime] = useState("");
@@ -48,7 +50,8 @@ export const Footer = () => {
       </div>
 
       <div className={style.footerRight}>
-        <div className={style.footerLink}>Link</div>
+        <div className={style.footerLink}><Link to="https://result.school/"><img className={style.resultLogo} src={resultLogo} alt="Result school logo"/></Link>
+        </div>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import facebook from "../../assets/icons/facebook.svg";
 import instagram from "../../assets/icons/instagram.svg";
 import linkedIn from "../../assets/icons/linkedin.svg";
 import github from "../../assets/icons/github.svg";
-import favLogo from "../../assets/icons/star.svg";
+// import favLogo from "../../assets/icons/star.svg";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { TEAM } from "../../constants";
