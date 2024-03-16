@@ -1,7 +1,13 @@
 import "./index.css";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, Link, RouterProvider } from "react-router-dom";
-import { FavoritePage, MainPage, PersonalPage, TestPage } from "./pages";
+import {
+  FavoritePage,
+  MainPage,
+  PersonalPage,
+  TestPage,
+  TestResult,
+} from "./pages";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +29,15 @@ const router = createBrowserRouter([
         path: "testPage",
         element: <TestPage />,
         handle: { crumb: () => <Link to="/testPage">Тест</Link> },
+        children: [
+          {
+            path: "testResult",
+            element: <TestResult />,
+            handle: {
+              crumb: () => <Link to="/testResult">Результат теста</Link>,
+            },
+          },
+        ],
       },
     ],
   },
