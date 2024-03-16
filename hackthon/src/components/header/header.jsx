@@ -4,7 +4,7 @@ import { Breadcrumbs } from "../breadcrumbs/breadcrumbs";
 
 // import { TEAM } from "../../constants/team";
 
-export const Header = () => {
+export const Header = ({ onFavoritePage }) => {
   return (
     <>
       <div className={slyle.header}>
@@ -15,9 +15,11 @@ export const Header = () => {
               <p>{item.name}</p>
             </li>
           ))}
-        </ul> */}
-        <Breadcrumbs />
-        <Link to="/favourites">Избранное</Link>
+        {onFavoritePage ? null : (
+          <Link to="/favorite">
+            <div>Избранное</div>
+          </Link>
+        )}
       </div>
     </>
   );

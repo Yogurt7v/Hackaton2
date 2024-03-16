@@ -15,7 +15,6 @@ import {
   Bard,
   // GitSwip,
   Logo,
-  Breadcrumbs,
   Layout,
 } from "../../components";
 
