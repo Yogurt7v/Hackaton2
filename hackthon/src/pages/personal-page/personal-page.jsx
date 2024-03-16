@@ -1,7 +1,4 @@
-/* eslint-disable react/no-unknown-property */
-/* eslint-disable react/prop-types */
 import style from "./personal-page.module.css";
-// import { useDispatch, useSelector } from "react-redux";
 import vk from "../../assets/icons/vk.svg";
 import facebook from "../../assets/icons/facebook.svg";
 import instagram from "../../assets/icons/instagram.svg";
@@ -11,6 +8,7 @@ import favLogo from "../../assets/icons/star.svg";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { TEAM } from "../../constants";
+import {getRandomColor} from "../../utils";
 import {
   ProgressBar,
   Button,
@@ -29,6 +27,9 @@ export const PersonalPage = () => {
   const [isOpenModalWindows, setIsOpenModalWindows] = useState(false);
   const [isFav, setIsFav] = useState(false);
 
+  const progressBarType = "circle";
+  const progressBarStyle = `${progressBarType}ProgressBarWrapper`;
+
   useEffect(() => {
     fetch(`https://api.github.com/users/${userPage.githubLogin}/repos`)
       .then((response) => response.json())
@@ -44,6 +45,7 @@ export const PersonalPage = () => {
   const addToFavorite = () => {
     setIsOpenModalWindows(true);
   };
+
 
   return (
     <>
@@ -106,13 +108,18 @@ export const PersonalPage = () => {
               text={userPage.socialNetwork?.github}
               logo={github}
             />
-            <div className={style.progressBarWrapper}>
+
+            <div className={style[progressBarStyle]}>
               <h4>Прогресс</h4>
-              <ProgressBar
-                progress={userPage.htmlProgress}
-                color="blue"
-                title="HTML"
-              />
+
+              {Object.entries(userPage.skills).map((skillInfo, index) => (
+                <ProgressBar
+                  key={index}
+                  skillInfo={skillInfo}
+                  color={getRandomColor()}
+                  type={progressBarType}
+                />
+              ))}
             </div>
           </div>
 

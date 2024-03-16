@@ -7,12 +7,12 @@ export const TEAM = [
     age: 37,
     done : ["Main page", "Personal page", "Favorite page", "Barge", "Slider", "LocalStorage", "Button", "Person card", "Header", "Footer"  ], 
     description: "Team 2 hackathon 2",
-    progreess :{
-      Html: 90,
-      Css: 70,
-      Js: 85,
-      React: 80,
-      Redux: 70,
+    skills :{
+      "Html": 90,
+      "Css": 70,
+      "Js": 85,
+      "React": 80,
+      "Redux": 70
     },
     socialNetwork: {
       vk: "недоступен",
@@ -34,12 +34,12 @@ export const TEAM = [
     done : ["Main page", "Personal page", "Favorite page", "Barge", "Slider", "LocalStorage", "Button", "Person card", "Header", "Footer"  ], 
     description:
       "Team 2 ackathon 2. Веду активный образ жизни,  решил сменить рабочую профессию и обучаюсь в Result School на Front-end-React разработчика. Люблю путешествовать, узнавать новое, создавать и делать полезные вещи и дела 🙂",
-      progreess :{
-        Html: 90,
-        Css: 70,
-        Js: 85,
-        React: 80,
-        Redux: 70,
+      skills :{
+        "Html": 90,
+        "Css": 70,
+        "Js": 85,
+        "React": 80,
+        "Redux": 70
       },
     socialNetwork: {
       vk: "",
@@ -60,12 +60,12 @@ export const TEAM = [
     age: 29,
     done : ["Main page", "Personal page", "Favorite page", "Barge", "Slider", "LocalStorage", "Button", "Person card", "Header", "Footer"  ], 
     description: "Team 2 hackathon 2",
-    progreess :{
-      Html: 90,
-      Css: 70,
-      Js: 85,
-      React: 80,
-      Redux: 70,
+    skills :{
+      "Html": 90,
+      "Css": 70,
+      "Js": 85,
+      "React": 80,
+      "Redux": 70
     },
     socialNetwork: {
       vk: "ibragimova1",
@@ -86,12 +86,12 @@ export const TEAM = [
     age: 27,
     done : ["Main page", "Personal page", "Favorite page", "Barge", "Slider", "LocalStorage", "Button", "Person card", "Header", "Footer"  ], 
     description: "Team 2 hackathon 2",
-    progreess :{
-      Html: 90,
-      Css: 70,
-      Js: 85,
-      React: 80,
-      Redux: 70,
+    skills :{
+      "Html": 90,
+      "Css": 70,
+      "Js": 85,
+      "React": 80,
+      "Redux": 70
     },
     socialNetwork: {
       vk: "",
