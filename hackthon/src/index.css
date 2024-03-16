@@ -77,15 +77,16 @@
   font-family: "Roboto", sans-serif;
 }
 
-body{
-  background: linear-gradient(45deg, #FC466B, #3F5EFB);
-  height: 100vh;  
+body {
+  background: linear-gradient(45deg, #fc466b, #3f5efb);
+  height: 100vh;
 }
 
 a,
 link,
 a:visited {
   text-decoration: none;
+  color: inherit;
 }
 
 a:hover {
@@ -93,6 +94,6 @@ a:hover {
   text-decoration: none;
 }
 
-li{
+li {
   list-style: none;
 }
