@@ -2,7 +2,7 @@ import slyle from "./header.module.css";
 import { TEAM } from "../../constants/team";
 import { Link } from "react-router-dom";
 
-export const Header = () => {
+export const Header = ({ onFavoritePage }) => {
   return (
     <>
       <div className={slyle.header}>
@@ -14,9 +14,12 @@ export const Header = () => {
             </li>
           ))}
         </ul>
-        <Link to="/favorite">
-          <div>Избранное</div>
-        </Link>
+
+        {onFavoritePage ? null : (
+          <Link to="/favorite">
+            <div>Избранное</div>
+          </Link>
+        )}
       </div>
     </>
   );

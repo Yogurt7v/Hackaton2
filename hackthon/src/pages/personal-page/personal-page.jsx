@@ -8,7 +8,7 @@ import github from "../../assets/icons/github.svg"
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { TEAM } from "../../constants";
-import { ProgressBar, Button, Bard, GitSwip, Logo } from "../../components";
+import { ProgressBar, Button, Bard, GitSwip, Logo, Footer } from "../../components";
 import  favLogo from "../../assets/icons/star.svg";
 
 export const PersonalPage = () => {
@@ -86,6 +86,7 @@ export const PersonalPage = () => {
         {githubRepos.length > 0 ? <GitSwip githubRepos={githubRepos} /> : null}
       </div>
       <Button func={() => goBack()} text="Назад" />
+      <Footer />
     </div>
   );
 };
