@@ -1,9 +1,7 @@
 import "./index.css";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, Link, RouterProvider } from "react-router-dom";
-import { FavoritePage, MainPage, PersonalPage } from "./pages";
-import { Provider } from "react-redux";
-import { store } from "./redux/store";
+import { FavoritePage, MainPage, PersonalPage, TestPage } from "./pages";
 
 const router = createBrowserRouter([
   {
@@ -21,12 +19,15 @@ const router = createBrowserRouter([
         element: <FavoritePage />,
         handle: { crumb: () => <Link to="/favourites">Избранное</Link> },
       },
+      {
+        path: "testPage",
+        element: <TestPage />,
+        handle: { crumb: () => <Link to="/testPage">Тест</Link> },
+      },
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <Provider store={store}>
-    <RouterProvider router={router} />
-  </Provider>
+  <RouterProvider router={router} />
 );
