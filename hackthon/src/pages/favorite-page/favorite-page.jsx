@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import style from "./favorite-page.module.css";
-import { Breadcrumbs, Button, Card } from "../../components";
+import { Button, Card, Layout } from "../../components";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { TEAM } from "../../constants";
@@ -38,42 +38,45 @@ export const FavoritePage = () => {
   }, []);
 
   return (
-    <div className={style.favoritePage}>
-      <Breadcrumbs />
-      <h1>Избранное</h1>
-      <div className={style.favoriteWrapper}>
-        {favorite.length > 0 ? (
-          favorite.map((favoriteItem) => (
-            <>
-              <div className={style.favoriteCardWrapper}>
-                <div>{favoriteItem.name}</div>
-                <Card person={favoriteItem} />
-                <Button
-                  text={"Удалить"}
-                  borderRadius={"10px"}
-                  func={() => removeFromFavorite(favoriteItem.id)}
-                />
-              </div>
-            </>
-          ))
-        ) : (
-          <p>В избранном пока ничего нет</p>
-        )}
-      </div>
-      <Button
-        color={"blue"}
-        text={"Назад"}
-        borderRadius={"10px"}
-        func={goBack}
-      />
-      {favorite.length > 0 ? (
-        <Button
-          color={"blue"}
-          text={"Clear"}
-          borderRadius={"10px"}
-          func={clearLocalStorage}
-        />
-      ) : null}
-    </div>
+    <>
+      <Layout>
+        <div className={style.favoritePage}>
+          <h1>Избранное</h1>
+          <div className={style.favoriteWrapper}>
+            {favorite.length > 0 ? (
+              favorite.map((favoriteItem) => (
+                <>
+                  <div className={style.favoriteCardWrapper}>
+                    <div>{favoriteItem.name}</div>
+                    <Card person={favoriteItem} />
+                    <Button
+                      text={"Удалить"}
+                      borderRadius={"10px"}
+                      func={() => removeFromFavorite(favoriteItem.id)}
+                    />
+                  </div>
+                </>
+              ))
+            ) : (
+              <p>В избранном пока ничего нет</p>
+            )}
+          </div>
+          <Button
+            color={"blue"}
+            text={"Назад"}
+            borderRadius={"10px"}
+            func={goBack}
+          />
+          {favorite.length > 0 ? (
+            <Button
+              color={"blue"}
+              text={"Clear"}
+              borderRadius={"10px"}
+              func={clearLocalStorage}
+            />
+          ) : null}
+        </div>
+      </Layout>
+    </>
   );
 };

@@ -8,3 +8,4 @@ export * from "./progress-bar/progress-bar.jsx";
 export * from "./logo/logo.jsx";
 export * from "./breadcrumbs/breadcrumbs.jsx";
 export * from "./modal/modal.jsx";
+export * from "./layout/layout.jsx";

@@ -16,6 +16,7 @@ import {
   // GitSwip,
   Logo,
   Breadcrumbs,
+  Layout,
 } from "../../components";
 
 import {
@@ -51,63 +52,70 @@ export const PersonalPage = () => {
   };
 
   return (
-    <div className={style.personalPage}>
-      <Breadcrumbs />
-      <Button
-        text={"Добавить в избранное"}
-        borderRadius={"10px"}
-        func={addToFavorite}
-      />
-      <h1>{userPage.name}</h1>
-      <h1>{userPage.surname}</h1>
-      <p>{userPage.description}</p>
-
-      {userPage.special?.length > 0 ? (
-        <div className={style.specialWrapper}>
-          {userPage.special.map((item) => (
-            <Bard color={"green"} text={item} key={item} />
-          ))}
-        </div>
-      ) : null}
-
-      <div>
-        <h2>Социальные сети</h2>
-        <Logo alt={"vkontakte"} text={userPage.socialNetwork?.vk} logo={vk} />
-        <Logo
-          alt={"facebook"}
-          text={userPage.socialNetwork?.facebook}
-          logo={facebook}
-        />
-        <Logo
-          alt={"instagram"}
-          text={userPage.socialNetwork?.instagram}
-          logo={instagram}
-        />
-        <Logo
-          alt={"linkedin"}
-          text={userPage.socialNetwork?.linkedIn}
-          logo={linkedIn}
-        />
-        <Logo
-          alt={"github"}
-          text={userPage.socialNetwork?.github}
-          logo={github}
-        />
-        <div className={style.progressBarWrapper}>
-          <h4>Прогресс</h4>
-          <ProgressBar
-            progress={userPage.htmlProgress}
-            color="blue"
-            title="HTML"
+    <>
+      <Layout>
+        <div className={style.personalPage}>
+          <Button
+            text={"Добавить в избранное"}
+            borderRadius={"10px"}
+            func={addToFavorite}
           />
-        </div>
-      </div>
+          <h1>{userPage.name}</h1>
+          <h1>{userPage.surname}</h1>
+          <p>{userPage.description}</p>
 
-      <img src={userPage.image} className={style.personalPageImage} />
-      <div className={style.swiperWrapper}>
-        {/* {githubRepos.length > 0 ? <GitSwip githubRepos={githubRepos} /> : null} */}
-      </div>
-      <Button func={() => goBack()} text="Назад" />
-    </div>
+          {userPage.special?.length > 0 ? (
+            <div className={style.specialWrapper}>
+              {userPage.special.map((item) => (
+                <Bard color={"green"} text={item} key={item} />
+              ))}
+            </div>
+          ) : null}
+
+          <div>
+            <h2>Социальные сети</h2>
+            <Logo
+              alt={"vkontakte"}
+              text={userPage.socialNetwork?.vk}
+              logo={vk}
+            />
+            <Logo
+              alt={"facebook"}
+              text={userPage.socialNetwork?.facebook}
+              logo={facebook}
+            />
+            <Logo
+              alt={"instagram"}
+              text={userPage.socialNetwork?.instagram}
+              logo={instagram}
+            />
+            <Logo
+              alt={"linkedin"}
+              text={userPage.socialNetwork?.linkedIn}
+              logo={linkedIn}
+            />
+            <Logo
+              alt={"github"}
+              text={userPage.socialNetwork?.github}
+              logo={github}
+            />
+            <div className={style.progressBarWrapper}>
+              <h4>Прогресс</h4>
+              <ProgressBar
+                progress={userPage.htmlProgress}
+                color="blue"
+                title="HTML"
+              />
+            </div>
+          </div>
+
+          <img src={userPage.image} className={style.personalPageImage} />
+          <div className={style.swiperWrapper}>
+            {/* {githubRepos.length > 0 ? <GitSwip githubRepos={githubRepos} /> : null} */}
+          </div>
+          <Button func={() => goBack()} text="Назад" />
+        </div>
+      </Layout>
+    </>
   );
 };

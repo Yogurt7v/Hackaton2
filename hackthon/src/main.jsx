@@ -2,7 +2,6 @@ import "./index.css";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, Link, RouterProvider } from "react-router-dom";
 import { FavoritePage, MainPage, PersonalPage } from "./pages";
-import { SomeComponent } from "./pages/SomeComponent";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 
@@ -21,15 +20,6 @@ const router = createBrowserRouter([
         path: "favourites",
         element: <FavoritePage />,
         handle: { crumb: () => <Link to="/favourites">Избранное</Link> },
-        children: [
-          {
-            path: "someComponent",
-            element: <SomeComponent />,
-            handle: {
-              crumb: () => <Link to="/someComponent">Какой-то компонент</Link>,
-            },
-          },
-        ],
       },
     ],
   },
