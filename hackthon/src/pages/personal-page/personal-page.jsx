@@ -6,6 +6,7 @@ import facebook from "../../assets/icons/facebook.svg";
 import instagram from "../../assets/icons/instagram.svg";
 import linkedIn from "../../assets/icons/linkedin.svg";
 import github from "../../assets/icons/github.svg";
+import favLogo from "../../assets/icons/star.svg";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { TEAM } from "../../constants";
@@ -13,7 +14,7 @@ import {
   ProgressBar,
   Button,
   Bard,
-  // GitSwip,
+  GitSwip,
   Logo,
   Layout,
 } from "../../components";
@@ -29,7 +30,9 @@ export const PersonalPage = () => {
   const navigate = useNavigate();
   const params = useParams();
   const dispatch = useDispatch();
-  const [setGithubRepos] = useState([]);
+  const [githubRepos, setGithubRepos] = useState([]);
+  const userPage = useSelector(userPageSelector);
+
 
   useEffect(() => {
     fetch(`https://api.github.com/users/${userPage.githubLogin}/repos`)
@@ -37,14 +40,13 @@ export const PersonalPage = () => {
       .then((data) => {
         setGithubRepos(data.map((item) => item.name));
       });
-    console.log(TEAM.find((item) => item.id === params.id));
     dispatch(setUserPage(TEAM.find((item) => item.id === params.id)));
   }, []);
+
 
   const goBack = () => {
     navigate(-1);
   };
-  const userPage = useSelector(userPageSelector);
   const addToFavorite = () => {
     dispatch(setIsOpenModal(true));
     dispatch(setTextForModal("Уверены, что хотите добавить в избранное?"));
@@ -59,6 +61,7 @@ export const PersonalPage = () => {
             borderRadius={"10px"}
             func={addToFavorite}
           />
+          {/* {star? (<div><img src={favLogo} alt="Favorite" className={style.starLogo}/></div>):(null)} */}
           <h1>{userPage.name}</h1>
           <h1>{userPage.surname}</h1>
           <p>{userPage.description}</p>
@@ -110,7 +113,7 @@ export const PersonalPage = () => {
 
           <img src={userPage.image} className={style.personalPageImage} />
           <div className={style.swiperWrapper}>
-            {/* {githubRepos.length > 0 ? <GitSwip githubRepos={githubRepos} /> : null} */}
+            {githubRepos.length > 0 ? <GitSwip githubRepos={githubRepos} /> : null}
           </div>
           <Button func={() => goBack()} text="Назад" />
         </div>

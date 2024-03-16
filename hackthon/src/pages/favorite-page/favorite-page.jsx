@@ -52,7 +52,7 @@ export const FavoritePage = () => {
                   key={favoriteItem.id}
                 >
                   <div>{favoriteItem.name}</div>
-                  <Card person={favoriteItem} />
+                  <Card person={favoriteItem}/>
                   <Button
                     text={"Удалить"}
                     borderRadius={"10px"}
