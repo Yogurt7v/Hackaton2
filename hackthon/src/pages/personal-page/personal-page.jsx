@@ -27,6 +27,7 @@ export const PersonalPage = () => {
   const [isOpenModalWindows, setIsOpenModalWindows] = useState(false);
   const [isFav, setIsFav] = useState(false);
   const [progressBarType, setProgressBarType] = useState("circle");
+  const [error, setError] = useState(null);
 
   const progressBarStyle = `${progressBarType}ProgressBarWrapper`;
 
@@ -35,8 +36,13 @@ export const PersonalPage = () => {
       .then((response) => response.json())
       .then((data) => {
         setGithubRepos(data.map((item) => item.name));
+      })
+      .catch((error) => {
+        setError(error);
+        // console.error('Error fetching repositories:', error);
       });
     localStorage.getItem(userPage.id) ? setIsFav(true) : setIsFav(false);
+    
   }, []);
 
   const goBack = () => {
@@ -129,9 +135,9 @@ export const PersonalPage = () => {
 
           <img src={userPage.image} className={style.personalPageImage} />
           <div className={style.swiperWrapper}>
-            {githubRepos.length > 0 ? (
+            {githubRepos.length > 0 && error === null ? (
               <GitSwip githubRepos={githubRepos} />
-            ) : null}
+            ) : <div>Ошибка запроса на гитхаб</div>}
           </div>
           <Button func={() => goBack()} text="Назад" />
         </div>
