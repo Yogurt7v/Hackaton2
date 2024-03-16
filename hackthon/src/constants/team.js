@@ -5,7 +5,13 @@
             "surname": "Егоров",
             "githubLogin": "Yogurt7v",
             "description": "Team 2 hackathon 2",
-            "htmlProgress": 90,
+            "skills": {
+                "html": 90,
+                "css": 90,
+                "js": 90,
+                "react": 90,
+                "redux": 90,
+            },
             "socialNetwork":{
                 "vk": "none",
                 "facebook":"none",
@@ -21,7 +27,13 @@
             "name": "Александр",
             "surname": "Шульгин",
             "description": "Team 2 ackathon 2. Веду активный образ жизни,  решил сменить рабочую профессию и обучаюсь в Result School на Front-end-React разработчика. Люблю путешествовать, узнавать новое, создавать и делать полезные вещи и дела 🙂",
-            "htmlProgress": 91,
+            "skills": {
+                "html": 90,
+                "css": 90,
+                "js": 90,
+                "react": 90,
+                "redux": 90,
+            },
             "socialNetwork":{
                 "vk": "",
                 "facebook":"",
@@ -37,7 +49,13 @@
             "name": "Name",
             "surname": "Surname",
             "description": "Team 1 description",
-            "htmlProgress": 90,
+            "skills": {
+                "html": 90,
+                "css": 90,
+                "js": 90,
+                "react": 90,
+                "redux": 90,
+            },
             "socialNetwork":{
                 "vk": "",
                 "facebook":"",
@@ -53,7 +71,13 @@
             "name": "Name",
             "surname": "Surname",
             "description": "Team 1 description",
-            "htmlProgress": 90,
+            "skills": {
+                "html": 90,
+                "css": 90,
+                "js": 90,
+                "react": 90,
+                "redux": 90,
+            },
             "socialNetwork":{
                 "vk": "",
                 "facebook":"",

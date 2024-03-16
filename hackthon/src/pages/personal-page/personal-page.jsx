@@ -3,6 +3,7 @@ import style from "./personal-page.module.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { TEAM } from "../../constants";
 import { ProgressBar, Button, Bard, GitSwip } from "../../components";
+import { getRandomColor } from "./utils";
 import { useEffect, useState } from "react";
 
 export const PersonalPage = () => {
@@ -11,6 +12,10 @@ export const PersonalPage = () => {
   const userPage = TEAM.find((item) => item.id === params.id);
   const [githubRepos, setGithubRepos] = useState([]);
 
+  const progressBarType = 'line'; 
+  const progressBarStyle = `${progressBarType}ProgressBarWrapper`;
+
+//`style.${progressBarType}ProgressBarWrapper`
 
   useEffect(() => {
     fetch(`https://api.github.com/users/${userPage.githubLogin}/repos`)
@@ -24,7 +29,8 @@ export const PersonalPage = () => {
   const goBack = () => {
     navigate(-1);
   };
-
+  
+  console.log(userPage)
   return (
     <div className={style.PersonalPage}>
       <h1>{userPage.name}</h1>
@@ -46,16 +52,21 @@ export const PersonalPage = () => {
         <p>Инстаграм: {userPage.socialNetwork.instagram}</p>
         <p>Линкедин: {userPage.socialNetwork.linkedIn}</p>
         <p>Гит: {userPage.socialNetwork.github}</p>
-        <div className={style.progressBarWrapper}>
+        <div className={style[progressBarStyle]}>
           <h4>Прогресс</h4>
-          <ProgressBar
-            progress={userPage.htmlProgress}
-            color="blue"
-            title="HTML"
-          />
+          {
+            Object.entries(userPage.skills).map((skillInfo, index) => (
+              <ProgressBar
+              key={index}
+              skillInfo={skillInfo}
+              color={getRandomColor()}
+              type={progressBarType}
+            />
+            ))
+
+          }
         </div>
       </div>
-
       <img src={userPage.image} className={style.personalPageImage} />
       <div className={style.swiperWrapper}>
         {githubRepos.length>0 ? (
