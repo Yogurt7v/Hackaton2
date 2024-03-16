@@ -1,18 +1,14 @@
-import style from "./progress-bar.module.css";
+import { CircleProgressbar, LineProgressbar } from "./components";
 
 // eslint-disable-next-line react/prop-types
-export const ProgressBar = ({ progress, color, title }) => {
+export const ProgressBar = ({ skillInfo, color, type = 'line'}) => {
+  const title = skillInfo[0];
+  const progress = skillInfo[1];
+  
   return (
-    <>
-      <h2>{title}</h2>
-      <div className={style.progressBar}>
-        <div
-          className={style.progressBarInner}
-          style={{ width: `${progress}%`, backgroundColor: `${color}` }}
-        >
-          {progress}%
-        </div>
-      </div>
-    </>
+    type === 'line' ?  
+    <LineProgressbar title={title} progress={progress} color={color} />
+    :
+    <CircleProgressbar title={title} progress={progress} color={color}/>
   );
 };

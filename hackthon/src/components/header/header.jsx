@@ -1,22 +1,18 @@
 import { Link } from "react-router-dom";
 import slyle from "./header.module.css";
-
-import { TEAM } from "../../constants/team";
+import brain from "../../assets/icons/brain.svg"
+import headerFavorite from "../../assets/icons/headerStar.svg"
+// import { TEAM } from "../../constants/team";
 
 export const Header = ({ onFavoritePage }) => {
   return (
     <>
       <div className={slyle.header}>
-        <h1>BrainStorm Hackathon 2.0</h1>
-        <ul className={slyle.teamList}></ul>
-          {TEAM.map((item) => (
-            <li key={item.id} className={slyle.teamItem}>
-              <p>{item.name}</p>
-            </li>
-          ))}
+        <div className={slyle.headerTitle}>BrainStorm <img src={brain} alt="brain"/></div>
+        <div className={slyle.headerTitle}>Hackthon 2.0</div>
         {onFavoritePage ? null : (
           <Link to="/favourites">
-            <div>Избранное</div>
+            <div className={slyle.headerTitle}>Избранное <img className={slyle.headerStar} src={headerFavorite} alt="headerFavorite"/></div>
           </Link>
         )}
       </div>

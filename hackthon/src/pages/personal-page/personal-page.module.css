@@ -21,3 +21,62 @@
     width: 30px;
     height: 30px;
 }
+
+
+ю.circleProgressBarWrapper {
+  display: flex;
+}
+
+.lineProgressBarWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+}
+
+.personalPageImage {
+  width: 400px;
+  height: 300px;
+}
+
+.personalSpecial {
+  display: flex;
+}
+
+.teamLead {
+  width: 20px;
+  height: 20px;
+}
+
+.specialWrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.circleProgressBarWrapper {
+  display: flex;
+}
+
+.lineProgressBarWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+}
+
+.personalPageImage {
+  width: 400px;
+  height: 300px;
+}
+
+.personalSpecial {
+  display: flex;
+}
+
+.teamLead {
+  width: 20px;
+  height: 20px;
+}
+
+.specialWrapper {
+  display: flex;
+  gap: 10px;
+}
