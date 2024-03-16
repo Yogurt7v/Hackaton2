@@ -13,14 +13,15 @@ export const Card = ({ person }) => {
             style={{
               backgroundImage: `url(${person.image})`,
             }}
-          >
-            <h2 className={style.cardText}>{person.name}</h2>
-            <h2 className={style.cardText}>{person.surname}</h2>
-            <Link to={`/team/${person.id}`}>
-              <Button text={"Подробнее"} borderRadius={"10px"}></Button>{" "}
-            </Link>
-          </div>
+          ></div>
         )}
+        <div className={style.cardTextWrapper}>
+          <div className={style.cardText}>{person.name}</div>
+          <div className={style.cardText}>{person.surname}</div>
+        </div>
+        <Link to={`/team/${person.id}`}>
+          <Button className={style.cardButton} text={"Открыть"} borderRadius={"10px"}></Button>{" "}
+        </Link>
       </div>
     </>
   );

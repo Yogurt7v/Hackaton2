@@ -1,7 +1,10 @@
 .cardWrapper{
 
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+
+
 }

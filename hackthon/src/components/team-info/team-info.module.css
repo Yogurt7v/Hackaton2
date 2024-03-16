@@ -1,0 +1,20 @@
+.TeamInfoWrapper{
+    background: rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
+    border-left: 1px solid rgba(255,255,255,0.3);
+    border-top: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
+    padding: 3em; 
+    width: 70%;
+    margin:  20px auto;
+    gap: 20px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.TeamInfoWrapper p{
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+}
