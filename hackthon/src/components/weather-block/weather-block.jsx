@@ -5,7 +5,6 @@ import { createWetherIcon } from "./utils/icon-weather";
 export const WeatherBlock = () => {
   const [city, setCity] = useState("");
   const [temperature, setTemperature] = useState("");
-  // const [weather, setWeather] = useState("");
   const [weatherIcon, setWeatherIcon] = useState("");
 
   useEffect(() => {
@@ -24,7 +23,6 @@ export const WeatherBlock = () => {
           .then(({ main, name, weather }) => {
             setCity(name);
             setTemperature(Math.round(main.temp));
-            // setWeather(weather[0].description);
             setWeatherIcon(createWetherIcon(weather[0].description));
           });
       })
@@ -45,7 +43,6 @@ export const WeatherBlock = () => {
       </div>
       <div className={slyle.header_weather_text}>
         {temperature}°C
-         {/* {weather} */}
         <img
           className={slyle.header_weather_icon}
           src={weatherIcon}

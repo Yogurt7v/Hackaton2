@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Button, Layout, QuestionForTest } from "../../components";
 import { technologyList } from "../../constants/questions-for-test/technology-list";
 import {
@@ -25,12 +25,7 @@ export const TestPage = () => {
   const [countStep, setCountStep] = useState(0);
   const [start, setStart] = useState(false);
   const [technologyName, setTechnologyName ] = useState(null);
-  
-  // useEffect(() => {
-  //   console.log("counter", counter);
-  //   console.log("countStep", countStep);
-  // }),
-  // [counter];
+
   
   const onClick = (id) => {  
     const nameFound = technologyList.find((technology) => (technology.id === Number(id))).name;
@@ -38,7 +33,7 @@ export const TestPage = () => {
     setCurrentQuestions(allQuestions[id]);
     setTechnologyName(nameFound)
   };
-  
+
   return (
     <>
       <Layout>
