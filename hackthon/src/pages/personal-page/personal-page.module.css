@@ -24,6 +24,8 @@ p{
 }
 
 .personalSpecial {
+  justify-content: space-between;
+  gap: 20px;
   display: flex;
   align-items: center;
   margin-top: 30px;
@@ -79,9 +81,6 @@ p{
   padding: 0 10px;
   margin-bottom: 10px;
 }
-
-
-
 
 .personalPageImage {
   width: 400px;
@@ -153,34 +152,9 @@ p{
   margin: 30px 0 10px 0;
 }
 
-.specialWrapper {
-  display: flex;
-}
-
 .starLogo{
     width: 30px;
     height: 30px;
-}
-
-.lineProgressBarWrapper {
-  display: flex;
-  flex-direction: column;
-  width: 600px;
-}
-
-
-.personalSpecial {
-  display: flex;
-}
-
-.teamLead {
-  width: 20px;
-  height: 20px;
-}
-
-.specialWrapper {
-  display: flex;
-  gap: 10px;
 }
 
 .circleProgressBarWrapper {
@@ -198,21 +172,6 @@ p{
   margin: 0 auto;
   width: 600px;
 }
-
-.personalPageImage {
-  width: 400px;
-  height: 300px;
-}
-
-.personalSpecial {
-  display: flex;
-}
-
-.teamLead {
-  width: 20px;
-  height: 20px;
-}
-
 .specialWrapper {
   display: flex;
   gap: 10px;
