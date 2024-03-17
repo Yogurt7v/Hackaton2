@@ -39,7 +39,7 @@ export const QuestionForTest = ({
       <div className={style.input_form_wrapper}>
         {" "}
         {currentQuest?.options.map((option) => (
-          <div key={option.id} className={style.input_form}>
+          <div key={option.id} className={style.input_wrapper}>
             <input
               type="checkbox"
               id={option.id}
@@ -47,8 +47,11 @@ export const QuestionForTest = ({
                 onClickCheckbox(target.id, target.checked)
               }
               disabled={selectedOption && selectedOption !== option.id}
+              className={style.input}
             />
-            <label htmlFor={option.id}>{option.text}</label>
+            <label className={style.label} htmlFor={option.id}>
+              {option.text}
+            </label>
           </div>
         ))}
       </div>

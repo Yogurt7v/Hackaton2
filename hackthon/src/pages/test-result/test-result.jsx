@@ -1,6 +1,7 @@
 import { useOutletContext } from "react-router-dom";
-import { Layout, ProgressBar } from "../../components";
+import { Button, Layout, ProgressBar } from "../../components";
 import { getRandomColor } from "../../utils";
+import style from "./test-result.module.css";
 
 export const TestResult = () => {
   const counter = useOutletContext();
@@ -8,7 +9,14 @@ export const TestResult = () => {
   return (
     <>
       <Layout>
-        <ProgressBar skillInfo={counter} color={getRandomColor()} type="circle"/>
+        <div className={style.test_result}>
+          <ProgressBar
+            skillInfo={counter}
+            color={getRandomColor()}
+            type="circle"
+          />
+          <Button text={"Пройти тест на знание другой технологии"}></Button>
+        </div>
       </Layout>
     </>
   );
