@@ -1,4 +1,4 @@
-import { useMatches } from "react-router-dom";
+import { useLocation, useMatches } from "react-router-dom";
 import style from "./breadcrumbs.module.css";
 
 export const Breadcrumbs = () => {
@@ -7,10 +7,17 @@ export const Breadcrumbs = () => {
     .filter((match) => Boolean(match.handle?.crumb))
     .map((match) => match.handle.crumb(match.id));
 
+  const location = useLocation();
+
   return (
     <ol className={style.breadcrumbs}>
       {crumbs.map((crumb, index) => (
-        <li className={style.breadcrumbs_item} key={index}>
+        <li
+          className={`${style.breadcrumbs_item} ${
+            location.pathname === matches[index].pathname ? style.current : ""
+          }`}
+          key={index}
+        >
           {crumb}
         </li>
       ))}

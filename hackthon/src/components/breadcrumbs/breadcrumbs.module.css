@@ -7,12 +7,16 @@
 }
 .breadcrumbs_item {
   margin-right: 5px;
+  color: darkmagenta;
 }
-.breadcrumbs a:visited {
+/* .breadcrumbs a:visited {
   color: #fb0505 !important;
-}
+} */
 .breadcrumbs_item:not(:last-child)::after {
   display: inline-block;
   margin: 0 0.25rem;
   content: "/";
+}
+.current {
+  color: aqua !important;
 }
