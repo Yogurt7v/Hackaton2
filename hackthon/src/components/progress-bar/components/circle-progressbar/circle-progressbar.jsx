@@ -2,11 +2,10 @@ import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import styles from "./circle-progressbar.module.css";
 
-export const CircleProgressbar = ({ title, progress, color }) => {
+export const CircleProgressbar = ({ title, progress, color, radius = 45 }) => {
   const PI = Math.PI;
-  const R = 45;
 
-  let circumference = 2 * PI * R;
+  let circumference = 2 * PI * radius;
 
   const [offset, setOffset] = useState(circumference);
 
@@ -34,7 +33,7 @@ export const CircleProgressbar = ({ title, progress, color }) => {
           <circle
             strokeWidth={10}
             fill="transparent"
-            r={R}
+            r={radius}
             cx={100}
             cy={100}
             stroke="lightgray"
@@ -43,7 +42,7 @@ export const CircleProgressbar = ({ title, progress, color }) => {
             className={styles.externalCircle}
             strokeWidth={10}
             fill="transparent"
-            r={R}
+            r={radius}
             cx={100}
             cy={100}
             strokeLinecap="round"
@@ -61,4 +60,5 @@ CircleProgressbar.propTypes = {
   title: PropTypes.string.isRequired,
   progress: PropTypes.number.isRequired,
   color: PropTypes.string.isRequired,
+  radius: PropTypes.number,
 };
