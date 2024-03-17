@@ -1,4 +1,4 @@
-import { useOutletContext } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 import { Button, Layout, ProgressBar } from "../../components";
 import { getRandomColor } from "../../utils";
 import style from "./test-result.module.css";
@@ -15,7 +15,8 @@ export const TestResult = () => {
             color={getRandomColor()}
             type="circle"
           />
-          <Button text={"Пройти тест на знание другой технологии"}></Button>
+
+          <Button text={"Пройти тест на знание другой технологии"} />
         </div>
       </Layout>
     </>
