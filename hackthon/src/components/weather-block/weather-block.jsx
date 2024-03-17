@@ -46,7 +46,8 @@ export const WeatherBlock = () => {
         <img
           className={slyle.header_weather_icon}
           src={weatherIcon}
-          alt="weather-icon"></img>
+          alt="weather-icon"
+        ></img>
       </div>
     </div>
   );

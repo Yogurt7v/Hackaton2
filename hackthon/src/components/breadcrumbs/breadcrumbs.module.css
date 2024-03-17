@@ -9,8 +9,9 @@
   margin-right: 5px;
   color: darkmagenta;
 }
-.breadcrumbs a:visited {
-  color: #fb0505 !important;
+.current {
+  color: aqua !important;
+  pointer-events: none;
 }
 .breadcrumbs_item:not(:last-child)::after {
   display: inline-block;
@@ -19,4 +20,5 @@
 }
 .current {
   color: aqua !important;
+  pointer-events: none;
 }

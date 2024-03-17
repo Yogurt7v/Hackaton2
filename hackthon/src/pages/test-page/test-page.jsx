@@ -24,14 +24,21 @@ export const TestPage = () => {
   const [counter, setCounter] = useState(0);
   const [countStep, setCountStep] = useState(0);
   const [start, setStart] = useState(false);
-  const [technologyName, setTechnologyName ] = useState(null);
+  const [technologyName, setTechnologyName] = useState(null);
 
-  
-  const onClick = (id) => {  
-    const nameFound = technologyList.find((technology) => (technology.id === Number(id))).name;
+  useEffect(() => {
+    console.log("counter", counter);
+    console.log("countStep", countStep);
+  }),
+    [counter];
+
+  const onClick = (id) => {
+    const nameFound = technologyList.find(
+      (technology) => technology.id === Number(id)
+    ).name;
 
     setCurrentQuestions(allQuestions[id]);
-    setTechnologyName(nameFound)
+    setTechnologyName(nameFound);
   };
 
   return (
@@ -49,6 +56,8 @@ export const TestPage = () => {
                     setCounter={setCounter}
                     countStep={countStep}
                     setCountStep={setCountStep}
+                    setStart={setStart}
+                    setCurrentQuestions={setCurrentQuestions}
                   />
                 ))}
               </div>

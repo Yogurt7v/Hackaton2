@@ -38,3 +38,8 @@
 .input {
   margin-right: 5px;
 }
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
