@@ -4,16 +4,15 @@ import { TEAM } from "../../constants/team";
 import { Outlet } from "react-router-dom";
 
 export const MainPage = () => {
-
   return (
     <>
       <Header onFavoritePage={false} />
       <div className={style.cardWrapper}>
         {TEAM.map((item) => (
-          <Card person={item} key={item.id}/>
-          ))}{" "}
+          <Card person={item} key={item.id} />
+        ))}{" "}
       </div>
-          <TeamInfo />
+
       <Outlet />
       <Footer />
     </>

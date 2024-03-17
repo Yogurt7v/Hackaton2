@@ -21,19 +21,24 @@
   font-weight: 700;
 }
 
-.headerTitle {
-  font-size: 24px;
-  font-weight: 700;
-  padding: 10px 20px;
-  font-family: "Montserrat", sans-serif;
+.headerWrapperTitle {
   display: flex;
   align-items: center;
-  gap: 15px;
-  color: #ffffff;
+  gap: 5px;
 }
 
 .headerTitle:hover {
   cursor: pointer;
   transition: 0.5s;
   text-shadow: 2px 2px 4px #000000;
+}
+
+.navbar {
+  display: flex;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  align-items: center;
+  gap: 25px;
+  color: #ffffff;
 }
