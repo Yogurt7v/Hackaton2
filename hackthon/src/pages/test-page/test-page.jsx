@@ -5,8 +5,8 @@ import {
   questionsForCSS,
   questionsForHTML,
   questionsForJS,
-  questionsForREACT,
-  questionsForREDUX,
+  questionsForReact,
+  questionsForRedux,
 } from "../../constants";
 import { Link, Outlet } from "react-router-dom";
 import style from "./test-page.module.css";
@@ -17,8 +17,8 @@ export const TestPage = () => {
     questionsForHTML,
     questionsForCSS,
     questionsForJS,
-    questionsForREACT,
-    questionsForREDUX,
+    questionsForReact,
+    questionsForRedux,
   ];
 
   const [counter, setCounter] = useState(0);
