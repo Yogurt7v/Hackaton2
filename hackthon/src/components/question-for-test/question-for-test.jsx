@@ -25,11 +25,6 @@ export const QuestionForTest = ({
     }
   };
 
-  // const onStopTest = () => {
-  //   setCounter(0);
-  //   setStart(false);
-  //   setCurrentQuestions([]);
-  // };
 
   const onClickSendAnswer = () => {
     if (selectedOption === trueAnswer) {
