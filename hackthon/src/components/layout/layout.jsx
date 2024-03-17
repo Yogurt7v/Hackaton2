@@ -1,13 +1,18 @@
 import PropTypes from "prop-types";
 import { Breadcrumbs } from "../breadcrumbs/breadcrumbs";
 import style from "./layout.module.css";
+import { Header } from "../header/header";
 
 export const Layout = ({ children }) => {
+  
   return (
     <div className={style.layout}>
-      <Breadcrumbs />
-      {children}
-    </div>
+      <div className={style.headerChild}>
+        <Header onFavoritePage={true} />
+      </div>
+        <Breadcrumbs />
+        {children}
+       </div>
   );
 };
 

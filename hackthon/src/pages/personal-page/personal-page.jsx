@@ -53,7 +53,7 @@ export const PersonalPage = () => {
   return (
     <>
       <Layout>
-        {/* <Header onFavoritePage={true} /> */}
+        
         <div className={style.personalPageWrapper}>
           <div className={style.personalSpecial}>
             <div className={style.Name}>
