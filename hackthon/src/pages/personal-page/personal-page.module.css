@@ -162,11 +162,6 @@ p{
     height: 30px;
 }
 
-
-.circleProgressBarWrapper {
-  display: flex;
-}
-
 .lineProgressBarWrapper {
   display: flex;
   flex-direction: column;
@@ -190,11 +185,17 @@ p{
 
 .circleProgressBarWrapper {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 600px;
 }
 
 .lineProgressBarWrapper {
   display: flex;
+  justify-content: center;
   flex-direction: column;
+  margin: 0 auto;
   width: 600px;
 }
 
