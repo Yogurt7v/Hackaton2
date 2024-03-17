@@ -5,11 +5,14 @@
   width: 20%;
   font-size: 24px;
   font-weight: 700;
-  padding: 10px 20px;
-  font-family: "Montserrat", sans-serif;
-
-  gap: 15px;
+  padding: 0 20px;
+  gap: 20px;
   color: #ffffff;
+
+}
+
+.header_weather:hover{
+  transition: 0.5s;
   text-shadow: 2px 2px 4px #000000;
 }
 
@@ -17,9 +20,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 50%;
+  margin-left: 10px;
+  width: 40%;
 }
 
 .header_weather_text {
   display: flex;
+  align-items: center;
+
 }

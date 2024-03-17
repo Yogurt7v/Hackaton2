@@ -8,6 +8,9 @@
 .breadcrumbs_item {
   margin-right: 5px;
 }
+.breadcrumbs a {
+  color: #ffffff !important;
+}
 .breadcrumbs a:visited {
   color: #fb0505 !important;
 }

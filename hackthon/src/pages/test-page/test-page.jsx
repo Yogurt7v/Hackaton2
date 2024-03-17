@@ -20,21 +20,26 @@ export const TestPage = () => {
     questionsForREACT,
     questionsForREDUX,
   ];
+
   const [counter, setCounter] = useState(0);
   const [countStep, setCountStep] = useState(0);
   const [start, setStart] = useState(false);
-
+  const [technologyName, setTechnologyName ] = useState(null);
+  
   useEffect(() => {
     console.log("counter", counter);
     console.log("countStep", countStep);
   }),
-    [counter];
+  [counter];
+  
+  const onClick = (id) => {  
+    const nameFound = technologyList.find((technology) => (technology.id === Number(id))).name;
 
-  const onClick = (id) => {
-    console.log(id);
     setCurrentQuestions(allQuestions[id]);
+    setTechnologyName(nameFound)
   };
-
+  
+  console.log('technologyName:', technologyName)
   return (
     <>
       <Layout>
@@ -86,7 +91,7 @@ export const TestPage = () => {
         )}
       </Layout>
 
-      <Outlet context={counter} />
+      <Outlet context={[technologyName, counter]} />
     </>
   );
 };

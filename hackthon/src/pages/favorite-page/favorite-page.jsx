@@ -8,16 +8,6 @@ import style from "./favorite-page.module.css";
 export const FavoritePage = () => {
   const navigate = useNavigate();
   const [favorite, setFavorite] = useState([]);
-  // const [onFavoritePage, setOnFavoritePage] = useState(false);
-  // const location = useLocation();
-  // console.log(location.pathname);
-
-  // useEffect(() => {
-  //   if (location.pathname === "/favourites") {
-  //     setOnFavoritePage(true);
-      
-  //   }
-  // }, [location]);
 
   const goBack = () => {
     navigate(-1);
@@ -50,9 +40,8 @@ export const FavoritePage = () => {
   return (
     <>
       <Layout>
-
-      <div className={style.favoritePage}>
       <Header onFavoritePage={true}/>
+      <div className={style.favoritePage}>
 
       <div className={style.favoritePageWrapper}>
         <h1>Избранное</h1>
