@@ -1,7 +1,7 @@
-
-.border{
-  height: 369px;
-  width: 290px;
+.border {
+  margin-top: 20px;
+  height: 300px;
+  width: 200px;
   background: transparent;
   border-radius: 10px;
   transition: border 1s;
@@ -9,37 +9,52 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
+  
 }
-.border:hover{
-    border: 1px solid white
-}
-
-.cardText{
-  color: black;
+.border:hover {
+  border: 1px solid white;
 }
 
-.cardImage{
-    height: 600px;
-    width: 400px;
+.cardText {
+  color: white;
+  font-size: 24px;
+  font-weight: 300;
+  line-height:  1.1;
+  text-shadow: 2px 2px 4px #000000;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.card{
-  height: 379px;
+.cardImage {
+  height: 600px;
+  width: 400px;
+}
+
+.card {
+  height: 300px;
   width: 300px;
-  background: grey;
-  background-size: 300px;
   border-radius: 10px;
   overflow: hidden;
-  background: black;
-  box-shadow: 0 70px 63px -60px #000000;
+  background: rgba(255,255,255,0.3);
+  backdrop-filter: blur(10px);
+  border-left: 1px solid rgba(255,255,255,0.3);
+  border-top: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
 }
 
-.card:hover{
-    transition: all 0.2s ease-in-out;
-    transform: scale(1.1);
+.card:hover {
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.1);
+}
+
+.cardTextWrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
 }
