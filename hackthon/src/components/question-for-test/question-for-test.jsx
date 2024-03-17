@@ -24,7 +24,7 @@ export const QuestionForTest = ({
 
   const onClickSendAnswer = () => {
     if (selectedOption === trueAnswer) {
-      setCounter(counter + 1);
+      setCounter(counter + 10);
     }
     setAnswer(true);
     setCountStep(countStep + 1);
