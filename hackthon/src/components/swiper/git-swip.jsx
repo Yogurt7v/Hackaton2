@@ -26,7 +26,7 @@ export const GitSwip  =({githubRepos}) => {
         className={style.mySwiper}
       >
         {githubRepos.map((item) => (
-  <SwiperSlide key={item}>{item}</SwiperSlide>))}
+  <SwiperSlide key={item}><div className={style.swiperText}>{item}</div></SwiperSlide>))}
       </Swiper>
     </>
   );

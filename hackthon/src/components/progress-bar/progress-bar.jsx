@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import { CircleProgressbar, LineProgressbar } from "./components";
 
 export const ProgressBar = ({ skillInfo, color, type = 'line', radius = 60}) => {
-  console.log('skillInfo:', skillInfo)
   const title = skillInfo[0];
   const progress = skillInfo[1];
   
