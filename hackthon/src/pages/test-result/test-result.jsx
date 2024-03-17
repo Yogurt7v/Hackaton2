@@ -1,5 +1,5 @@
 import { useOutletContext } from "react-router-dom";
-import { Layout, ProgressBar } from "../../components";
+import { Layout, ProgressBar, } from "../../components";
 import { getRandomColor } from "../../utils";
 
 export const TestResult = () => {
