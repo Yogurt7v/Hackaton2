@@ -12,7 +12,7 @@ export const MainPage = () => {
           <Card person={item} key={item.id} />
         ))}{" "}
       </div>
-
+      <TeamInfo />
       <Outlet />
       <Footer />
     </>

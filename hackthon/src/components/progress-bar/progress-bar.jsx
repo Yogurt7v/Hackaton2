@@ -8,7 +8,7 @@ export const ProgressBar = ({ skillInfo, color, type = 'line', radius = 60}) => 
 
   return type === "line" ? (
     <LineProgressbar title={title} progress={progress} color={color} />
-    :
+   ) : (
     <CircleProgressbar title={title} progress={progress} color={color} radius={radius}/>
   );
 };

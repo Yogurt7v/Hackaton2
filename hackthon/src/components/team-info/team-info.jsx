@@ -3,7 +3,7 @@ import style from "./team-info.module.css";
 export const TeamInfo = () => {
     return (
         <div className={style.TeamInfoWrapper}>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet iure doloremque beatae repellendus. Atque sint nesciunt eius sequi officia debitis blanditiis perspiciatis, assumenda eum repudiandae delectus modi beatae corporis error dolores velit autem saepe qui, voluptatum deserunt magnam aspernatur doloremque consequuntur. Perferendis doloribus nostrum, illo pariatur aperiam libero quam quibusdam neque iure eaque commodi blanditiis nam hic, labore laboriosam ipsum debitis accusantium, qui sed quasi eius dolore sapiente? Nemo exercitationem et nisi ab beatae maiores nulla necessitatibus iste corrupti impedit voluptate animi aperiam incidunt voluptates nesciunt, dolorem enim culpa, cumque officiis aliquam dicta. Vero deleniti accusamus maiores aliquid itaque nobis?</p>
+            <p>Наша команда junior-web-разработчиков состоит из четырех учеников курсов, которые уже успели познакомиться с основами веб-разработки и успешно прошли несколько хакатонов. Мы работаем сообща над различными проектами, обмениваемся опытом и помогаем друг другу в решении сложных задач. В нашей команде есть те, кто отлично разбирается во фронтенде, те, кто знает все о бэкенде, а также специалисты по дизайну и тестированию. Мы стремимся к постоянному развитию, изучая новые технологии и подходы в веб-разработке, чтобы стать настоящими профессионалами в своей области.</p>
         </div>
     )
 }

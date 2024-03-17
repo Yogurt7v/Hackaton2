@@ -31,6 +31,14 @@ export const WeatherBlock = () => {
 
   return (
     <div className={slyle.header_weather}>
+          <div className={slyle.header_weather_text}>
+            {temperature}°C
+            <img
+              className={slyle.header_weather_icon}
+              src={weatherIcon}
+              alt="weather-icon"
+            ></img>
+          </div>
       <div>
         {city}, {" "}
         <div>
@@ -40,14 +48,6 @@ export const WeatherBlock = () => {
         })}
 
         </div>
-      </div>
-      <div className={slyle.header_weather_text}>
-        {temperature}°C
-        <img
-          className={slyle.header_weather_icon}
-          src={weatherIcon}
-          alt="weather-icon"
-        ></img>
       </div>
     </div>
   );
