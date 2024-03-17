@@ -9,16 +9,6 @@ import { TEAM } from "../../constants";
 export const FavoritePage = () => {
   const navigate = useNavigate();
   const [favorite, setFavorite] = useState([]);
-  // const [onFavoritePage, setOnFavoritePage] = useState(false);
-  // const location = useLocation();
-  // console.log(location.pathname);
-
-  // useEffect(() => {
-  //   if (location.pathname === "/favourites") {
-  //     setOnFavoritePage(true);
-      
-  //   }
-  // }, [location]);
 
   const goBack = () => {
     navigate(-1);
