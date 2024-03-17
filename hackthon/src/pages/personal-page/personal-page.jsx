@@ -40,6 +40,8 @@ export const PersonalPage = () => {
       .catch((error) => {
         setError(error);
       });
+
+
     localStorage.getItem(userPage.id) ? setIsFav(true) : setIsFav(false);
   }, [userPage.githubLogin, userPage.id]);
 
@@ -119,7 +121,7 @@ export const PersonalPage = () => {
                 {userPage.special?.length > 0 ? (
                   <div className={style.specialWrapper}>
                     {userPage.special.map((item) => (
-                      <Bard text={item} key={item} />
+                      <Bard text={item} key={item} color={"blue"}/>
                     ))}
                   </div>
                 ) : null}

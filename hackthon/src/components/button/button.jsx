@@ -6,7 +6,7 @@ export const Button = ({ color, text, borderRadius, func, disabled, id }) => {
     <button
       className={style.button}
       style={{ backgroundColor: color, borderRadius: borderRadius }}
-      onClick={() => func()}
+      onClick={func && (() => func())}
       disabled={disabled}
       id={id}>
       {text}
