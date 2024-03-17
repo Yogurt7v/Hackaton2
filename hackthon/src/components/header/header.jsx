@@ -9,7 +9,10 @@ export const Header = ({ onFavoritePage }) => {
     <>
       <div className={slyle.header}>
         <div className={slyle.headerTitle}>
-          BrainStorm <img src={brain} alt="brain" />
+          <div>BrainStorm</div> 
+          <Link to="/">
+          <img src={brain} alt="brain" />
+          </Link>
         </div>
       {onFavoritePage ? null : (
         <Link to="/favourites">

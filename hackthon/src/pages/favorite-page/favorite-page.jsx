@@ -41,9 +41,8 @@ export const FavoritePage = () => {
   return (
     <>
       <Layout>
-
-      <div className={style.favoritePage}>
       <Header onFavoritePage={true}/>
+      <div className={style.favoritePage}>
 
       <div className={style.favoritePageWrapper}>
         <h1>Избранное</h1>

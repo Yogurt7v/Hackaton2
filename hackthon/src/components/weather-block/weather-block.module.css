@@ -6,9 +6,7 @@
   font-size: 24px;
   font-weight: 700;
   padding: 0 20px;
-  font-family: "Montserrat", sans-serif;
-
-  gap: 15px;
+  gap: 20px;
   color: #ffffff;
 
 }
@@ -22,11 +20,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 50%;
+  margin-left: 10px;
+  width: 40%;
 
-  font-family: "Montserrat", sans-serif;
 }
 
 .header_weather_text {
   display: flex;
+  align-items: center;
+
 }
