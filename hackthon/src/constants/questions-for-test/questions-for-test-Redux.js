@@ -13,9 +13,9 @@ export const questionsForREDUX = [
     id: "002",
     question: "Какие основные компоненты Redux?",
     options: [
-      { id: "02", text: "Store, Actions, Middleware" },
-      { id: "03", text: "Store, Actions, Selectors" },
-      { id: "01", text: "Store, Actions, Reducers" },
+      { id: "01", text: "Store, Actions, Middleware" },
+      { id: "02", text: "Store, Actions, Selectors" },
+      { id: "03", text: "Store, Actions, Reducers" },
     ],
     answer: "03",
   },
@@ -67,7 +67,7 @@ export const questionsForREDUX = [
       { id: "02", text: "Через замыкания и чистые функции" },
       { id: "03", text: "Через использование REST API" },
     ],
-    answer: "03",
+    answer: "02",
   },
   {
     id: "007",
@@ -77,7 +77,7 @@ export const questionsForREDUX = [
       { id: "02", text: "Функция для создания комментариев" },
       { id: "03", text: "Язык программирования" },
     ],
-    answer: "03",
+    answer: "01",
   },
   {
     id: "008",
@@ -107,6 +107,6 @@ export const questionsForREDUX = [
       { id: "02", text: "Действие определяет логику обновления состояния, а редуктор отправляет запросы на сервер" },
       { id: "03", text: "Действие является компонентом UI, а редуктор обрабатывает события мыши" },
     ],
-    answer: "03",
+    answer: "01",
   },
 ];
