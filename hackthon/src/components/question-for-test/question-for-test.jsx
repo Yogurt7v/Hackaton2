@@ -10,8 +10,6 @@ export const QuestionForTest = ({
   countStep,
   setCountStep,
   resetTest,
-  setStart,
-  setCurrentQuestions,
 }) => {
   const [isAnswer, setAnswer] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
@@ -74,6 +72,5 @@ QuestionForTest.propTypes = {
   setCounter: PropTypes.func,
   countStep: PropTypes.number,
   setCountStep: PropTypes.func,
-  setStart: PropTypes.func,
-  setCurrentQuestions: PropTypes.func,
+  resetTest: PropTypes.func,
 };

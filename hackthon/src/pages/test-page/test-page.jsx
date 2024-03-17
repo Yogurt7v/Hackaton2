@@ -47,7 +47,7 @@ export const TestPage = () => {
   return (
     <>
       <Layout>
-        {countStep !== 3 ? (
+        {countStep !== 10 ? (
           <div className={style.testPage}>
             {start ? (
               <div>
@@ -59,6 +59,7 @@ export const TestPage = () => {
                     setCounter={setCounter}
                     countStep={countStep}
                     resetTest={resetTest}
+                    setCountStep={setCountStep}
                   />
                 ))}
               </div>
@@ -75,8 +76,7 @@ export const TestPage = () => {
                       key={id}
                       id={id}
                       disabled={currentQuestions?.length !== 0}
-                      onClick={({ target }) => onClick(target.id)}
-                    >
+                      onClick={({ target }) => onClick(target.id)}>
                       {name}
                     </button>
                   ))}
@@ -84,8 +84,7 @@ export const TestPage = () => {
                 <Button
                   text={"Начать тест"}
                   func={() => setStart(true)}
-                  disabled={currentQuestions?.length === 0}
-                ></Button>
+                  disabled={currentQuestions?.length === 0}></Button>
               </>
             )}
           </div>
@@ -97,7 +96,7 @@ export const TestPage = () => {
         )}
       </Layout>
 
-      <Outlet context={[technologyName, counter]} />
+      <Outlet resetTest={resetTest} context={[technologyName, counter]} />
     </>
   );
 };
