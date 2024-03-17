@@ -1,5 +1,4 @@
 .question {
-  border: 1px solid black;
   width: 400px;
   height: 250px;
   display: flex;
@@ -10,8 +9,11 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 20;
-  background: #fcfafa;
   padding: 10px;
+  background: #ab88cb;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  color: #fff;
 }
 
 .input_form_wrapper {
