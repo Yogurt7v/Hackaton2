@@ -1,4 +1,4 @@
-export const questionsForREACT = [
+export const questionsForReact = [
     {
       id: "001",
       question: "Что такое React?",
