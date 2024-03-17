@@ -40,7 +40,6 @@ export const FavoritePage = () => {
   return (
     <>
       <Layout>
-      <Header onFavoritePage={true}/>
       <div className={style.favoritePage}>
 
       <div className={style.favoritePageWrapper}>

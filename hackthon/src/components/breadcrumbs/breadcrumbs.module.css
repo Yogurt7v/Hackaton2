@@ -12,7 +12,7 @@
   color: #ffffff !important;
 }
 .breadcrumbs a:visited {
-  color: #fb0505 !important;
+  color: blue !important;
 }
 .breadcrumbs_item:not(:last-child)::after {
   display: inline-block;
