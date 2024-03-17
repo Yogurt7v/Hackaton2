@@ -1,22 +1,22 @@
-import styles from './circle-progressbar.module.css';
+import PropTypes from "prop-types";
+import { useState, useEffect } from "react";
+import styles from "./circle-progressbar.module.css";
 
-import { useState, useEffect } from 'react';
-
-export const CircleProgressbar = ({ title, progress, color,}) => {
+export const CircleProgressbar = ({ title, progress, color }) => {
   const PI = Math.PI;
   const R = 45;
 
-  let circumference = 2 * PI * R
-  
+  let circumference = 2 * PI * R;
+
   const [offset, setOffset] = useState(circumference);
-  
-  const animateProgress = () => {
-    setOffset((circumference - progress / 100 * circumference).toString())
-  }
-  
+
   useEffect(() => {
+    const animateProgress = () => {
+      setOffset((circumference - (progress / 100) * circumference).toString());
+    };
+
     setTimeout(animateProgress, 0);
-  }, []); 
+  }, [progress, circumference]);
 
   return (
     <div className={styles.maincontainer}>
@@ -25,31 +25,28 @@ export const CircleProgressbar = ({ title, progress, color,}) => {
       </div>
       <div className={styles.circleContainer}>
         <div className={styles.progressContainer}>
-          <span className={styles.progress} style={{color}}>
+          <span className={styles.progress} style={{ color }}>
             {progress}%
           </span>
         </div>
 
-        <svg
-          width='200'
-          height='200'
-        >
-        <circle 
+        <svg width="200" height="200">
+          <circle
             strokeWidth={10}
-            fill='transparent'
+            fill="transparent"
             r={R}
             cx={100}
             cy={100}
-            stroke='lightgray'
+            stroke="lightgray"
           />
           <circle
             className={styles.externalCircle}
             strokeWidth={10}
-            fill='transparent'
+            fill="transparent"
             r={R}
             cx={100}
             cy={100}
-            strokeLinecap='round'
+            strokeLinecap="round"
             stroke={color}
             strokeDasharray={circumference}
             strokeDashoffset={offset}
@@ -57,5 +54,11 @@ export const CircleProgressbar = ({ title, progress, color,}) => {
         </svg>
       </div>
     </div>
-  )
-}
+  );
+};
+
+CircleProgressbar.propTypes = {
+  title: PropTypes.string.isRequired,
+  progress: PropTypes.number.isRequired,
+  color: PropTypes.string.isRequired,
+};

@@ -29,7 +29,7 @@ export const TEAM = [
     id: "2",
     name: "Александр",
     surname: "Шульгин",
-    githubLogin: "",
+    githubLogin: "Holyhelper1",
     age: 32,
     done : ["Main page", "Personal page", "Favorite page", "Barge", "Slider", "LocalStorage", "Button", "Person card", "Header", "Footer"  ], 
     description:
@@ -42,11 +42,11 @@ export const TEAM = [
         "Redux": 70
       },
     socialNetwork: {
-      vk: "",
-      facebook: "",
-      instagram: "",
-      linkedIn: "",
-      github: "",
+      vk: "https://vk.com/alexdude",
+      facebook: "https://www.facebook.com/profile.php?id=100002948432331",
+      instagram: "https://www.instagram.com/alex_shul_/",
+      linkedIn: "https://www.linkedin.com/in/alexander-shulgin-964b49267/",
+      github: "https://github.com/Holyhelper1",
     },
     special: ["frontend"],
     image:

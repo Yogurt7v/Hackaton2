@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types";
 import style from "./button.module.css";
 
 export const Button = ({ color, text, borderRadius, func, disabled, id }) => {
@@ -8,9 +8,17 @@ export const Button = ({ color, text, borderRadius, func, disabled, id }) => {
       style={{ backgroundColor: color, borderRadius: borderRadius }}
       onClick={() => func()}
       disabled={disabled}
-      id={id}
-    >
+      id={id}>
       {text}
     </button>
   );
+};
+
+Button.propTypes = {
+  color: PropTypes.string,
+  text: PropTypes.string,
+  borderRadius: PropTypes.string,
+  func: PropTypes.func,
+  disabled: PropTypes.bool,
+  id: PropTypes.string,
 };

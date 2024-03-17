@@ -1,4 +1,3 @@
-import style from "./personal-page.module.css";
 import vk from "../../assets/icons/vk.svg";
 import facebook from "../../assets/icons/facebook.svg";
 import instagram from "../../assets/icons/instagram.svg";
@@ -18,6 +17,7 @@ import {
   Layout,
   Modal,
 } from "../../components";
+import style from "./personal-page.module.css";
 
 export const PersonalPage = () => {
   const navigate = useNavigate();
@@ -41,7 +41,7 @@ export const PersonalPage = () => {
         setError(error);
       });
     localStorage.getItem(userPage.id) ? setIsFav(true) : setIsFav(false);
-  }, []);
+  }, [userPage.githubLogin, userPage.id]);
 
   const goBack = () => {
     navigate(-1);
@@ -143,8 +143,7 @@ export const PersonalPage = () => {
               <div className={style.snHeader}>Прогресс</div>
               <select
                 className={style.select}
-                onChange={(e) => setProgressBarType(e.target.value)}
-              >
+                onChange={(e) => setProgressBarType(e.target.value)}>
                 <option value="circle">Круг</option>
                 <option value="line">Линия</option>
               </select>

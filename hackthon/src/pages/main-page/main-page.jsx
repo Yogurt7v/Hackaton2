@@ -1,7 +1,7 @@
-import style from "./main-page.module.css";
 import { Header, Card, TeamInfo, Footer } from "../../components";
 import { TEAM } from "../../constants/team";
 import { Outlet } from "react-router-dom";
+import style from "./main-page.module.css";
 
 export const MainPage = () => {
 
