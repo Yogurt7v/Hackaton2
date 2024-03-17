@@ -216,3 +216,7 @@ p{
   display: flex;
   gap: 10px;
 }
+
+.swiperWrapper {
+  width: 40%;
+}
