@@ -1,4 +1,4 @@
-import { Button, Card,  Header, Layout } from "../../components";
+import { Button, Card, Layout } from "../../components";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { TEAM } from "../../constants";
