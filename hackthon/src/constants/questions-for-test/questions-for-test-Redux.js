@@ -70,7 +70,7 @@ export const questionsForRedux = [
       answer: "03",
     },
     {
-      id: "007",
+      id: "008",
       question: "Что такое dispatch в Redux",
       options: [
         { id: "01", text: "Метод для отправки действий в хранилище" },
@@ -80,7 +80,7 @@ export const questionsForRedux = [
       answer: "03",
     },
     {
-      id: "008",
+      id: "009",
       question: "Что такое combineReducers в Redux",
       options: [
         { id: "01", text: "Метод для объединения редьюсеров" },
@@ -90,7 +90,7 @@ export const questionsForRedux = [
       answer: "01",
     },
     {
-      id: "009",
+      id: "010",
       question: "Какой принцип лежит в основе работы Redux",
       options: [
         { id: "01", text: "Принцип MVC" },
@@ -100,7 +100,7 @@ export const questionsForRedux = [
       answer: "02",
     },
     {
-      id: "010",
+      id: "011",
       question: "Чем отличается действие (action) от редуктора (reducer) в Redux?",
       options: [
         { id: "01", text: "Действие определяет тип события, а редуктор изменяет состояние" },

@@ -78,4 +78,6 @@ QuestionForTest.propTypes = {
   setCounter: PropTypes.func,
   countStep: PropTypes.number,
   setCountStep: PropTypes.func,
+  setStart: PropTypes.func,
+  setCurrentQuestions: PropTypes.func,
 };
