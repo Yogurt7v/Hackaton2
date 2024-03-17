@@ -13,6 +13,7 @@ export const Header = ({ onFavoritePage }) => {
         </div>
         <div className={slyle.headerTitle}>Hackthon 2.0</div>
         <WeatherBlock />
+        <Link to="/testPage">Пройти тест на технологии</Link>
         {onFavoritePage ? null : (
           <Link to="/favourites">
             <div className={slyle.headerTitle}>

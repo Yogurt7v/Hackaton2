@@ -19,3 +19,5 @@ export * from "./swiper/git-swip.jsx"
 export * from "./logo/logo.jsx"
 export * from "./footer/footer.jsx"
 export * from "./weather-block/weather-block.jsx"
+export * from "./question-for-test/question-for-test.jsx";
+

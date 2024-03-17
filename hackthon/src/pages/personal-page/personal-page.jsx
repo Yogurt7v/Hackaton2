@@ -8,7 +8,7 @@ import favLogo from "../../assets/icons/star.svg";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { TEAM } from "../../constants";
-import {getRandomColor} from "../../utils";
+import { getRandomColor } from "../../utils";
 import {
   ProgressBar,
   Button,
@@ -39,10 +39,8 @@ export const PersonalPage = () => {
       })
       .catch((error) => {
         setError(error);
-        // console.error('Error fetching repositories:', error);
       });
     localStorage.getItem(userPage.id) ? setIsFav(true) : setIsFav(false);
-    
   }, []);
 
   const goBack = () => {
@@ -52,76 +50,106 @@ export const PersonalPage = () => {
     setIsOpenModalWindows(true);
   };
 
-
   return (
     <>
       <Layout>
-        <div className={style.personalPage}>
-          {isFav ? (
-            <div>
-              <img src={favLogo} alt="Favorite" className={style.starLogo} />
-              <span>В избранном</span>
+        {/* <Header onFavoritePage={true} /> */}
+        <div className={style.personalPageWrapper}>
+          <div className={style.personalSpecial}>
+            <div className={style.Name}>
+              <div className={style.personalPageName}>{userPage.name}</div>
+              <div className={style.personalPageName}>{userPage.surname}</div>
+              {isFav ? (
+                <div className={style.personalPageFavorite}>
+                  <img
+                    src={favLogo}
+                    alt="Favorite"
+                    className={style.starLogo}
+                  />
+                  <span>В избранном</span>
+                </div>
+              ) : (
+                <div className={style.buttonFavorite}>
+                  <Button
+                    text={"Добавить в избранное"}
+                    borderRadius={"10px"}
+                    func={addToFavorite}
+                  />
+                </div>
+              )}
+              <p>Возраст: {userPage.age}</p>
+              <p>О себе: {userPage.description}</p>
+              <div className={style.personalPageDone}>
+                <p> Сделано:</p>
+                {userPage.done.map((item) => (
+                  <p key={item}>{item},</p>
+                ))}
+              </div>
+              <div className={style.socialNetworkWrapper}>
+                <div className={style.snHeader}>Социальные сети</div>
+                <div className={style.socialNetworkLogos}>
+                  <Logo
+                    alt={"vkontakte"}
+                    text={userPage.socialNetwork?.vk}
+                    logo={vk}
+                  />
+                  <Logo
+                    alt={"facebook"}
+                    text={userPage.socialNetwork?.facebook}
+                    logo={facebook}
+                  />
+                  <Logo
+                    alt={"instagram"}
+                    text={userPage.socialNetwork?.instagram}
+                    logo={instagram}
+                  />
+                  <Logo
+                    alt={"linkedin"}
+                    text={userPage.socialNetwork?.linkedIn}
+                    logo={linkedIn}
+                  />
+                  <Logo
+                    alt={"github"}
+                    text={userPage.socialNetwork?.github}
+                    logo={github}
+                  />
+                </div>
+              </div>
+              <div className={style.specialWr}>
+                <div className={style.snHeader}>Специальность:</div>
+                {userPage.special?.length > 0 ? (
+                  <div className={style.specialWrapper}>
+                    {userPage.special.map((item) => (
+                      <Bard color={"green"} text={item} key={item} />
+                    ))}
+                  </div>
+                ) : null}
+              </div>
             </div>
-          ) : (
-            <Button
-              text={"Добавить в избранное"}
-              borderRadius={"10px"}
-              className={style.buttonFavorite}
-              func={addToFavorite}
-            />
-          )}
-
-          <h1>{userPage.name}</h1>
-          <h1>{userPage.surname}</h1>
-          <p>{userPage.age}</p>
-          <p>{userPage.description}</p>
-          {userPage.done.map((item) => (
-            <span key={item}>{item}</span>
-          ))}
-
-          {userPage.special?.length > 0 ? (
-            <div className={style.specialWrapper}>
-              {userPage.special.map((item) => (
-                <Bard color={"green"} text={item} key={item} />
-              ))}
+            <div className={style.personalPageImageWrapper}>
+              <img src={userPage.image} className={style.personalPageImage} />
+              <Button
+                className={style.buttonBack}
+                borderRadius={"10px"}
+                co
+                func={() => goBack()}
+                text="Назад"
+              />
             </div>
-          ) : null}
+          </div>
 
-          <div>
-            <h2>Социальные сети</h2>
-            <Logo
-              alt={"vkontakte"}
-              text={userPage.socialNetwork?.vk}
-              logo={vk}
-            />
-            <Logo
-              alt={"facebook"}
-              text={userPage.socialNetwork?.facebook}
-              logo={facebook}
-            />
-            <Logo
-              alt={"instagram"}
-              text={userPage.socialNetwork?.instagram}
-              logo={instagram}
-            />
-            <Logo
-              alt={"linkedin"}
-              text={userPage.socialNetwork?.linkedIn}
-              logo={linkedIn}
-            />
-            <Logo
-              alt={"github"}
-              text={userPage.socialNetwork?.github}
-              logo={github}
-            />
-
-            <div className={style[progressBarStyle]}>
-              <h4>Прогресс</h4>
-              <select className={style.select} onChange={(e) => setProgressBarType(e.target.value)}>
+          <div className={style.progressBarWrapper}>
+            <div className={style.namePlusSelector}>
+              <div className={style.snHeader}>Прогресс</div>
+              <select
+                className={style.select}
+                onChange={(e) => setProgressBarType(e.target.value)}
+              >
                 <option value="circle">Круг</option>
                 <option value="line">Линия</option>
               </select>
-
+            </div>
+            <div className={style[progressBarStyle]}>
               {Object.entries(userPage.skills).map((skillInfo, index) => (
                 <ProgressBar
                   key={index}
@@ -133,13 +161,13 @@ export const PersonalPage = () => {
             </div>
           </div>
 
-          <img src={userPage.image} className={style.personalPageImage} />
           <div className={style.swiperWrapper}>
             {githubRepos.length > 0 && error === null ? (
               <GitSwip githubRepos={githubRepos} />
-            ) : <div>Ошибка запроса на гитхаб</div>}
+            ) : (
+              <div>Ошибка запроса на гитхаб</div>
+            )}
           </div>
-          <Button func={() => goBack()} text="Назад" />
         </div>
       </Layout>
       {isOpenModalWindows && (
