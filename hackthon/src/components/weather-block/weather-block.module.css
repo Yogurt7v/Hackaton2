@@ -5,11 +5,16 @@
   width: 20%;
   font-size: 24px;
   font-weight: 700;
-  padding: 10px 20px;
+  padding: 0 20px;
   font-family: "Montserrat", sans-serif;
 
   gap: 15px;
   color: #ffffff;
+
+}
+
+.header_weather:hover{
+  transition: 0.5s;
   text-shadow: 2px 2px 4px #000000;
 }
 

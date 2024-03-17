@@ -11,12 +11,6 @@ export const Header = ({ onFavoritePage }) => {
         <div className={slyle.headerTitle}>
           BrainStorm <img src={brain} alt="brain" />
         </div>
-        <div className={slyle.headerTitle}>
-          {" "}
-          <Link to="/testPage">Пройти тест на технологии</Link>
-        </div>
-        <WeatherBlock />
-      </div>
       {onFavoritePage ? null : (
         <Link to="/favourites">
           <div className={slyle.headerTitle}>
@@ -29,6 +23,12 @@ export const Header = ({ onFavoritePage }) => {
           </div>
         </Link>
       )}
+        <div className={slyle.headerTitle}>
+          {" "}
+          <Link to="/testPage">Пройти тест на технологии</Link>
+        </div>
+        <WeatherBlock />
+      </div>
     </>
   );
 };
