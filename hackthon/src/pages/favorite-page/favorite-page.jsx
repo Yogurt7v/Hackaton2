@@ -4,10 +4,21 @@ import { Button, Card,  Header, Layout } from "../../components";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { TEAM } from "../../constants";
+// import { useLocation } from "react-router-dom";
 
 export const FavoritePage = () => {
   const navigate = useNavigate();
   const [favorite, setFavorite] = useState([]);
+  // const [onFavoritePage, setOnFavoritePage] = useState(false);
+  // const location = useLocation();
+  // console.log(location.pathname);
+
+  // useEffect(() => {
+  //   if (location.pathname === "/favourites") {
+  //     setOnFavoritePage(true);
+      
+  //   }
+  // }, [location]);
 
   const goBack = () => {
     navigate(-1);
@@ -40,8 +51,11 @@ export const FavoritePage = () => {
   return (
     <>
       <Layout>
-    <Header onFavoritePage={true}/>
+
       <div className={style.favoritePage}>
+      <Header onFavoritePage={true}/>
+
+      <div className={style.favoritePageWrapper}>
         <h1>Избранное</h1>
         <div className={style.favoriteWrapper}>
           {favorite.length > 0 ? (
@@ -65,20 +79,21 @@ export const FavoritePage = () => {
             <p>В избранном пока ничего нет</p>
           )}
         </div>
+        <div className={style.favoriteButtons}>
+          {favorite.length > 0 ? (
+            <Button
+              text={"Удалить все"}
+              borderRadius={"10px"}
+              func={clearLocalStorage}
+            />
+          ) : null}
         <Button
-          color={"blue"}
           text={"Назад"}
           borderRadius={"10px"}
           func={goBack}
         />
-        {favorite.length > 0 ? (
-          <Button
-            color={"blue"}
-            text={"Clear"}
-            borderRadius={"10px"}
-            func={clearLocalStorage}
-          />
-        ) : null}
+        </div>
+        </div>
       </div>
       </Layout>
     </>
