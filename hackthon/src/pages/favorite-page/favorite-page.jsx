@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { TEAM } from "../../constants";
 import style from "./favorite-page.module.css";
-// import { useLocation } from "react-router-dom";
 
 export const FavoritePage = () => {
   const navigate = useNavigate();
@@ -43,7 +42,7 @@ export const FavoritePage = () => {
       <div className={style.favoritePage}>
 
       <div className={style.favoritePageWrapper}>
-        <h1>Избранное</h1>
+        <div className={style.favoritePageTitle}>Избранное</div>
         <div className={style.favoriteWrapper}>
           {favorite.length > 0 ? (
             favorite.map((favoriteItem) => (
@@ -72,12 +71,14 @@ export const FavoritePage = () => {
               text={"Удалить все"}
               borderRadius={"10px"}
               func={clearLocalStorage}
+              сlassName={style.favoriteSingleButton}
             />
           ) : null}
         <Button
           text={"Назад"}
           borderRadius={"10px"}
           func={goBack}
+          сlassName={style.favoriteSingleButton}
         />
         </div>
         </div>
