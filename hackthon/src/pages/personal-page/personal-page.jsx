@@ -120,7 +120,7 @@ export const PersonalPage = () => {
                 {userPage.special?.length > 0 ? (
                   <div className={style.specialWrapper}>
                     {userPage.special.map((item) => (
-                      <Bard color={"green"} text={item} key={item} />
+                      <Bard text={item} key={item} />
                     ))}
                   </div>
                 ) : null}
