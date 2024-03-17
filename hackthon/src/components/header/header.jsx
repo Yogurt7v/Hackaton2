@@ -17,10 +17,11 @@ export const Header = ({ onFavoritePage }) => {
             </div>
           </Link>
         </div>
-        <div className={slyle.headerTitle}>
-          {" "}
-          <Link to="/testPage">Пройти тест на технологии</Link>
-        </div>
+        <nav className={slyle.navbar}>
+        <li className={slyle.headerTitle}>
+            <Link to="/testPage">Пройти тест на технологии</Link>
+          </li>
+        </nav>
         <div className={slyle.headerTitle}>
           {" "}
           {onFavoritePage ? null : (
