@@ -11,6 +11,28 @@
   gap: 40px;
 }
 
+.favoritePageTitle{
+  font-size: 30px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px #000000;
+  animation: pulse 5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    text-shadow: 2px 2px 4px #000000;
+  }
+  50% {
+    text-shadow: 0px 0px 0px #000000;
+  }
+  25% {
+    text-shadow: 0px 0px 5px #FFD700;
+  }
+  75% {
+    text-shadow: 0px 0px 10px #FFD700;
+  }
+}
+
 .favoriteCardWrapper {
   display: flex;
   flex-direction: column;
@@ -37,7 +59,14 @@
 
 .favoriteButtons{
   display: flex;
+  width: 50%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+
+.favoriteSingleButton{
+  width: 100%;
+  height: 50px;
 }

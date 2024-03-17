@@ -26,11 +26,11 @@ export const TestPage = () => {
   const [start, setStart] = useState(false);
   const [technologyName, setTechnologyName ] = useState(null);
   
-  useEffect(() => {
-    console.log("counter", counter);
-    console.log("countStep", countStep);
-  }),
-  [counter];
+  // useEffect(() => {
+  //   console.log("counter", counter);
+  //   console.log("countStep", countStep);
+  // }),
+  // [counter];
   
   const onClick = (id) => {  
     const nameFound = technologyList.find((technology) => (technology.id === Number(id))).name;
@@ -39,7 +39,6 @@ export const TestPage = () => {
     setTechnologyName(nameFound)
   };
   
-  console.log('technologyName:', technologyName)
   return (
     <>
       <Layout>

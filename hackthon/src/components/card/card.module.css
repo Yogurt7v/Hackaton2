@@ -11,9 +11,6 @@
   background-repeat: no-repeat;
   
 }
-.border:hover {
-  border: 1px solid white;
-}
 
 .cardText {
   color: white;
@@ -21,7 +18,6 @@
   font-weight: 300;
   line-height:  1.1;
   text-shadow: 2px 2px 4px #000000;
-  font-family: 'Montserrat', sans-serif;
 }
 
 .cardImage {

@@ -9,10 +9,13 @@
   margin-right: 5px;
 }
 .breadcrumbs a {
+  text-decoration: none;
+  font-size: 18px;
+  margin: 0 20px;
   color: #ffffff !important;
 }
 .breadcrumbs a:visited {
-  color: #fb0505 !important;
+  color: blue !important;
 }
 .breadcrumbs_item:not(:last-child)::after {
   display: inline-block;

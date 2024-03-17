@@ -39,11 +39,12 @@ export const Footer = () => {
         <div className={style.footerText}>BrainStorm</div>
         <div className={style.footerLogo}>© 2024 </div>
       </div>
-      <div>Hackthon 2.0</div>
 
       <div className={style.footerCenter}>
         <div className={style.footerTimer}>
-          Студенты ResultSchool уже: {time}
+          <div> Студенты ResultSchool уже:</div>
+
+          <div className={style.footerTimerText}>{time}</div>
         </div>
       </div>
 
