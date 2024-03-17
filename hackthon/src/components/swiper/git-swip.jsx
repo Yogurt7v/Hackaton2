@@ -15,7 +15,7 @@ export const GitSwip  =({githubRepos}) => {
         centeredSlides={true}
         autoplay={{
           delay: 2500,
-          disableOnInteraction: false,
+          disableOnInteraction: false,ч
         }}
         pagination={{
           clickable: true,
