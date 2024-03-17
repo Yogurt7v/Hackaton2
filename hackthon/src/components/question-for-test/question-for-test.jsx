@@ -10,8 +10,6 @@ export const QuestionForTest = ({
   countStep,
   setCountStep,
   resetTest,
-  setStart,
-  setCurrentQuestions,
 }) => {
   const [isAnswer, setAnswer] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
@@ -25,11 +23,6 @@ export const QuestionForTest = ({
     }
   };
 
-  // const onStopTest = () => {
-  //   setCounter(0);
-  //   setStart(false);
-  //   setCurrentQuestions([]);
-  // };
 
   const onClickSendAnswer = () => {
     if (selectedOption === trueAnswer) {
@@ -79,4 +72,5 @@ QuestionForTest.propTypes = {
   setCounter: PropTypes.func,
   countStep: PropTypes.number,
   setCountStep: PropTypes.func,
+  resetTest: PropTypes.func,
 };
