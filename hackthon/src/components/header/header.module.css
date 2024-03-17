@@ -33,6 +33,18 @@
   color: #ffffff;
 }
 
+.headerWrapperTitle{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.headerLogoToMain{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .headerTitle:hover {
   cursor: pointer;
   transition: 0.5s;
