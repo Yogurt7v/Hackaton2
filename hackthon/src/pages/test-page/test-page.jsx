@@ -42,6 +42,7 @@ export const TestPage = () => {
     setTechnologyName(null);
     setCountStep(0);
   };
+  
 
   return (
     <>
