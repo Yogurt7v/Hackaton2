@@ -9,13 +9,15 @@ export * from "./logo/logo.jsx";
 export * from "./breadcrumbs/breadcrumbs.jsx";
 export * from "./modal/modal.jsx";
 export * from "./layout/layout.jsx";
-export * from "./header/header.jsx";
-export * from "./card/card.jsx";
-export * from "./team-info/team-info.jsx";
-export * from "./button/button.jsx";
-export * from "./bard/bard.jsx";
-export * from "./progress-bar/progress-bar.jsx";
-export * from "./swiper/git-swip.jsx";
-export * from "./logo/logo.jsx";
-export * from "./footer/footer.jsx";
+export * from "./header/header.jsx"
+export * from "./card/card.jsx"
+export * from "./team-info/team-info.jsx"
+export * from "./button/button.jsx"
+export * from "./bard/bard.jsx"
+export * from "./progress-bar/progress-bar.jsx"
+export * from "./swiper/git-swip.jsx"
+export * from "./logo/logo.jsx"
+export * from "./footer/footer.jsx"
+export * from "./weather-block/weather-block.jsx"
 export * from "./question-for-test/question-for-test.jsx";
+

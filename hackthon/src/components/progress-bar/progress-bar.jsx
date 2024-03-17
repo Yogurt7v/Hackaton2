@@ -2,6 +2,7 @@ import { CircleProgressbar, LineProgressbar } from "./components";
 
 // eslint-disable-next-line react/prop-types
 export const ProgressBar = ({ skillInfo, color, type = 'line'}) => {
+  console.log('skillInfo:', skillInfo)
   const title = skillInfo[0];
   const progress = skillInfo[1];
   
