@@ -8,6 +8,7 @@ import {
   TestPage,
   TestResult,
 } from "./pages";
+import { TeamInfo } from "./components";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,11 @@ const router = createBrowserRouter([
         path: "favourites",
         element: <FavoritePage />,
         handle: { crumb: () => <Link to="/favourites">Избранное</Link> },
+      },
+      {
+        path: "teamInfo",
+        element: <TeamInfo />,
+        handle: { crumb: () => <Link to="/teamInfo">О команде</Link> },
       },
       {
         path: "testPage",
