@@ -1,17 +1,23 @@
 .mySwiper{
     height: 100px;
-    width: 50%;
+    /* width: 50%; */
     display: flex;
     align-items: center;
     text-align: center;
+    background: rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
+    border-left: 1px solid rgba(255,255,255,0.3);
+    border-top: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
+    margin-bottom: 90px;
 }
 
 
 .swiper-wrapper{
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    text-align: center; */
 }
 
 .swiper-slide {
