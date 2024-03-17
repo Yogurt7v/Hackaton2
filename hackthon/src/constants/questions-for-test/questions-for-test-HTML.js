@@ -18,6 +18,7 @@ export const questionsForHTML = [
       { id: "3333", text: "<title>" },
     ],
     answer: "22222",
+
   },
   {
     id: "003",
@@ -89,6 +90,7 @@ export const questionsForHTML = [
       { id: "3333", text: "<strong>" },
     ],
     answer: "22222",
+
   },
   {
     id: "010",
@@ -199,5 +201,6 @@ export const questionsForHTML = [
       { id: "3333", text: "<horizontal>" },
     ],
     answer: "11111",
+
   },
 ];

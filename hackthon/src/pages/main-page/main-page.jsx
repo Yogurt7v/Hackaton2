@@ -8,12 +8,12 @@ export const MainPage = () => {
   return (
     <>
       <Header onFavoritePage={false} />
-      <TeamInfo />
       <div className={style.cardWrapper}>
         {TEAM.map((item) => (
           <Card person={item} key={item.id}/>
-        ))}{" "}
+          ))}{" "}
       </div>
+          <TeamInfo />
       <Outlet />
       <Footer />
     </>
