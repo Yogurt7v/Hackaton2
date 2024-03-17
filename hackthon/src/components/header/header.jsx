@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import slyle from "./header.module.css";
 import brain from "../../assets/icons/brain.svg";
 import headerFavorite from "../../assets/icons/headerStar.svg";
-// import { TEAM } from "../../constants/team";
+import { WeatherBlock } from "../weather-block/weather-block";
 
 export const Header = ({ onFavoritePage }) => {
   return (
@@ -12,6 +12,7 @@ export const Header = ({ onFavoritePage }) => {
           BrainStorm <img src={brain} alt="brain" />
         </div>
         <div className={slyle.headerTitle}>Hackthon 2.0</div>
+        <WeatherBlock />
         <Link to="/testPage">Пройти тест на технологии</Link>
         {onFavoritePage ? null : (
           <Link to="/favourites">
