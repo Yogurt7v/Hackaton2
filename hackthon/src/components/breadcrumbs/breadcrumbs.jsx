@@ -6,9 +6,7 @@ export const Breadcrumbs = () => {
   let crumbs = matches
     .filter((match) => Boolean(match.handle?.crumb))
     .map((match) => match.handle.crumb(match.id));
-
   const location = useLocation();
-
   return (
     <ol className={style.breadcrumbs}>
       {crumbs.map((crumb, index) => (

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import style from './line-progressbar.module.css';
 
 export const LineProgressbar = ({title, progress, color}) => (
@@ -13,3 +14,9 @@ export const LineProgressbar = ({title, progress, color}) => (
     </div>
   </div>
 );
+
+LineProgressbar.propTypes = {
+  title: PropTypes.string.isRequired,
+  progress: PropTypes.number.isRequired,
+  color: PropTypes.string.isRequired,
+}

@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Button, Layout, QuestionForTest } from "../../components";
 import { technologyList } from "../../constants/questions-for-test/technology-list";
-import style from "./test-page.module.css";
 import {
   questionsForCSS,
   questionsForHTML,
@@ -10,6 +9,7 @@ import {
   questionsForREDUX,
 } from "../../constants";
 import { Link, Outlet } from "react-router-dom";
+import style from "./test-page.module.css";
 
 export const TestPage = () => {
   const [currentQuestions, setCurrentQuestions] = useState([]);
@@ -41,7 +41,6 @@ export const TestPage = () => {
     setTechnologyName(nameFound);
   };
 
-  console.log("technologyName:", technologyName);
   return (
     <>
       <Layout>
@@ -75,8 +74,7 @@ export const TestPage = () => {
                       key={id}
                       id={id}
                       disabled={currentQuestions.length !== 0}
-                      onClick={({ target }) => onClick(target.id)}
-                    >
+                      onClick={({ target }) => onClick(target.id)}>
                       {name}
                     </button>
                   ))}
@@ -84,8 +82,7 @@ export const TestPage = () => {
                 <Button
                   text={"Начать тест"}
                   func={() => setStart(true)}
-                  disabled={currentQuestions.length === 0}
-                ></Button>
+                  disabled={currentQuestions.length === 0}></Button>
               </>
             )}
           </div>

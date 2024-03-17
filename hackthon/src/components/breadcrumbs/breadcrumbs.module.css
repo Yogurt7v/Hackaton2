@@ -3,13 +3,16 @@
   flex-wrap: wrap;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 10px 0 10px 80px;
 }
 .breadcrumbs_item {
   margin-right: 5px;
   color: darkmagenta;
 }
-
+.current {
+  color: aqua !important;
+  pointer-events: none;
+}
 .breadcrumbs_item:not(:last-child)::after {
   display: inline-block;
   margin: 0 0.25rem;

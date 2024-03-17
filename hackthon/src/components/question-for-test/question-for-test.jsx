@@ -1,6 +1,7 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
-import style from "./question-for-test.module.css";
 import { Button } from "../button/button";
+import style from "./question-for-test.module.css";
 
 export const QuestionForTest = ({
   currentQuest,
@@ -69,4 +70,12 @@ export const QuestionForTest = ({
       </div>
     </div>
   );
+};
+
+QuestionForTest.propTypes = {
+  currentQuest: PropTypes.object,
+  counter: PropTypes.number,
+  setCounter: PropTypes.func,
+  countStep: PropTypes.number,
+  setCountStep: PropTypes.func,
 };

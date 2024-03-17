@@ -1,8 +1,9 @@
-import style from "./git-swip.module.css";
+import PropTypes from "prop-types";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import style from "./git-swip.module.css";
 
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
@@ -25,8 +26,12 @@ export const GitSwip  =({githubRepos}) => {
         className={style.mySwiper}
       >
         {githubRepos.map((item) => (
-  <SwiperSlide key={item}>{item}</SwiperSlide>))}
+  <SwiperSlide key={item}><div className={style.swiperText}>{item}</div></SwiperSlide>))}
       </Swiper>
     </>
   );
+}
+
+GitSwip.propTypes = {
+  githubRepos: PropTypes.array
 }

@@ -1,6 +1,6 @@
-/* eslint-disable react/prop-types */
-import style from "./modal.module.css";
+import PropTypes from "prop-types";
 import { Button } from "../button/button";
+import style from "./modal.module.css";
 
 export const Modal = ({ setIsOpenModalWindows, userPage, setIsFav }) => {
   const onCkickYes = () => {
@@ -25,4 +25,10 @@ export const Modal = ({ setIsOpenModalWindows, userPage, setIsFav }) => {
       </div>
     </div>
   );
+};
+
+Modal.propTypes = {
+  setIsOpenModalWindows: PropTypes.func,
+  userPage: PropTypes.object,
+  setIsFav: PropTypes.func,
 };
