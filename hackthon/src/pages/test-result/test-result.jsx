@@ -1,12 +1,14 @@
 import { useOutletContext } from "react-router-dom";
-import { Layout } from "../../components";
+import { Layout, ProgressBar } from "../../components";
+import { getRandomColor } from "../../utils";
 
 export const TestResult = () => {
   const counter = useOutletContext();
+
   return (
     <>
       <Layout>
-        <div>Ваш результат: {counter}</div>
+        <ProgressBar skillInfo={counter} color={getRandomColor()} type="circle"/>
       </Layout>
     </>
   );
