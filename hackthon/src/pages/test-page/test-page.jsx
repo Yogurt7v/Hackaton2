@@ -26,7 +26,6 @@ export const TestPage = () => {
   const [start, setStart] = useState(false);
   const [technologyName, setTechnologyName] = useState(null);
 
-
   const onClick = (id) => {
     const nameFound = technologyList.find(
       (technology) => technology.id === Number(id)
@@ -34,6 +33,14 @@ export const TestPage = () => {
 
     setCurrentQuestions(allQuestions[id]);
     setTechnologyName(nameFound);
+  };
+
+  const resetTest = () => {
+    setCurrentQuestions([]);
+    setCounter(0);
+    setStart(false);
+    setTechnologyName(null);
+    setCountStep(0);
   };
 
   return (
@@ -50,9 +57,7 @@ export const TestPage = () => {
                     counter={counter}
                     setCounter={setCounter}
                     countStep={countStep}
-                    setCountStep={setCountStep}
-                    setStart={setStart}
-                    setCurrentQuestions={setCurrentQuestions}
+                    resetTest={resetTest}
                   />
                 ))}
               </div>
@@ -68,8 +73,9 @@ export const TestPage = () => {
                       className={style.technologyList_item}
                       key={id}
                       id={id}
-                      disabled={currentQuestions.length !== 0}
-                      onClick={({ target }) => onClick(target.id)}>
+                      disabled={currentQuestions?.length !== 0}
+                      onClick={({ target }) => onClick(target.id)}
+                    >
                       {name}
                     </button>
                   ))}
@@ -77,7 +83,8 @@ export const TestPage = () => {
                 <Button
                   text={"Начать тест"}
                   func={() => setStart(true)}
-                  disabled={currentQuestions.length === 0}></Button>
+                  disabled={currentQuestions?.length === 0}
+                ></Button>
               </>
             )}
           </div>

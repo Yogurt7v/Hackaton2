@@ -9,6 +9,7 @@ export const QuestionForTest = ({
   setCounter,
   countStep,
   setCountStep,
+  resetTest,
   setStart,
   setCurrentQuestions,
 }) => {
@@ -24,11 +25,11 @@ export const QuestionForTest = ({
     }
   };
 
-  const onStopTest = () => {
-    setCounter(0);
-    setStart(false);
-    setCurrentQuestions([]);
-  };
+  // const onStopTest = () => {
+  //   setCounter(0);
+  //   setStart(false);
+  //   setCurrentQuestions([]);
+  // };
 
   const onClickSendAnswer = () => {
     if (selectedOption === trueAnswer) {
@@ -66,7 +67,7 @@ export const QuestionForTest = ({
       </div>
       <div className={style.buttons}>
         <Button text="ответить" func={onClickSendAnswer}></Button>
-        <Button text="остановить тест" func={onStopTest}></Button>
+        <Button text="остановить тест" func={resetTest}></Button>
       </div>
     </div>
   );
