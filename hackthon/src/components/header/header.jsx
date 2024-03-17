@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
-import slyle from "./header.module.css";
+import PropTypes from "prop-types";
 import brain from "../../assets/icons/brain.svg";
 import headerFavorite from "../../assets/icons/headerStar.svg";
+import { Link } from "react-router-dom";
 import { WeatherBlock } from "../weather-block/weather-block";
+import slyle from "./header.module.css";
 
 export const Header = ({ onFavoritePage }) => {
   return (
@@ -11,9 +12,9 @@ export const Header = ({ onFavoritePage }) => {
         <div className={slyle.headerTitle}>
           BrainStorm <img src={brain} alt="brain" />
         </div>
-        <div className={slyle.headerTitle}>Hackthon 2.0</div>
+
         <WeatherBlock />
-        <Link to="/testPage">Пройти тест на технологии</Link>
+        <Link to="/testPage" className={slyle.headerTitle}>Пройти тест на технологии</Link>
         {onFavoritePage ? null : (
           <Link to="/favourites">
             <div className={slyle.headerTitle}>
@@ -29,4 +30,8 @@ export const Header = ({ onFavoritePage }) => {
       </div>
     </>
   );
+};
+
+Header.propTypes = {
+  onFavoritePage: PropTypes.bool.isRequired,
 };

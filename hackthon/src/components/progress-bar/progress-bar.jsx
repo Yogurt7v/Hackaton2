@@ -1,6 +1,6 @@
+import PropTypes from "prop-types";
 import { CircleProgressbar, LineProgressbar } from "./components";
 
-// eslint-disable-next-line react/prop-types
 export const ProgressBar = ({ skillInfo, color, type = 'line'}) => {
   const title = skillInfo[0];
   const progress = skillInfo[1];
@@ -12,3 +12,9 @@ export const ProgressBar = ({ skillInfo, color, type = 'line'}) => {
     <CircleProgressbar title={title} progress={progress} color={color}/>
   );
 };
+
+ProgressBar.propTypes = {
+  skillInfo: PropTypes.array.isRequired,
+  color: PropTypes.string.isRequired,
+  type: PropTypes.string
+}

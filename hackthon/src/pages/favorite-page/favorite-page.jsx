@@ -1,9 +1,8 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import style from "./favorite-page.module.css";
 import { Button, Card,  Header, Layout } from "../../components";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { TEAM } from "../../constants";
+import style from "./favorite-page.module.css";
 // import { useLocation } from "react-router-dom";
 
 export const FavoritePage = () => {

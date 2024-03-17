@@ -1,8 +1,9 @@
-import style from "./git-swip.module.css";
+import PropTypes from "prop-types";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import style from "./git-swip.module.css";
 
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
@@ -15,7 +16,7 @@ export const GitSwip  =({githubRepos}) => {
         centeredSlides={true}
         autoplay={{
           delay: 2500,
-          disableOnInteraction: false,ч
+          disableOnInteraction: false,
         }}
         pagination={{
           clickable: true,
@@ -29,4 +30,8 @@ export const GitSwip  =({githubRepos}) => {
       </Swiper>
     </>
   );
+}
+
+GitSwip.propTypes = {
+  githubRepos: PropTypes.array
 }
